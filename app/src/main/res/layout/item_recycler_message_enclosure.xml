@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/item_tv_message_enclosure_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:text="@string/app_name"
+        android:textColor="@color/new_black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/item_tv_message_enclosure_see"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:text="查看"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/line_edit"
+        android:layout_below="@+id/item_tv_message_enclosure_name"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>

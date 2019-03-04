@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">丰蓄数字化电站</string>
+    <!-- 工程介绍 -->
+    <string name="project_introduce">\t\t 丰宁抽水蓄能电站位于河北省丰宁满族自治县境内，南距北京市180千米，东南距承德市170千米，规划装机容量360万千瓦。
+      \t电站分两期开发，一期装机规模180万千瓦。电站上水库库容5800万立方米，下水库库容6070万立方米。电站建成后，对京津唐电网可发挥周调节作用。</string>
+
+
+    <!--Fragment 相关-->
+    <string name="fragment_zero">首页</string>
+    <string name="fragment_one">工作</string>
+    <string name="fragment_two">消息</string>
+    <string name="fragment_three">个人中心</string>
+
+    <!-- Brightness 相关 -->
+    <string name="brightness_set_auto_brightness_enable">Set Auto Brightness Enable</string>
+    <string name="brightness_set_auto_brightness_disable">Set Auto Brightness Disable</string>
+
+    <!-- Flashlight相关 -->
+    <string name="flashlight_open">Open Flashlight</string>
+    <string name="flashlight_close">Close Flashlight</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+</resources>

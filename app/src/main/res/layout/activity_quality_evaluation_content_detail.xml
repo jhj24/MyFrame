@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/line_gray"
+    android:orientation="vertical"
+    tools:context=".activity.work.QualityEvaluationContentDetailActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_gray" />
+
+    <!-- 顶部Tab -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/quality_detail_recycler_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/quality_detail_recycler_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone" />
+
+    <include layout="@layout/layout_empty" />
+
+</LinearLayout>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/line_edit">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.work.ProgressRealTimeAddActivity">
+
+        <!-- 所属标段 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="所属标段:"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/progress_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- 日期 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:ems="4"
+                android:text="日期:"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/progress_text_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="10dp"
+                android:drawableRight="@drawable/right"
+                android:hint="请选择日期"
+                android:padding="10dp"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- 填报人 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:ems="4"
+                android:text="填报人:"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/progress_text_curname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- 备注 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginLeft="6dp"
+                android:ems="4"
+                android:text="备注:"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/progress_edit_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:gravity="start"
+                android:hint="请输入..."
+                android:lines="4"
+                android:padding="0dp"
+                android:textColor="@color/middle_black"
+                android:textCursorDrawable="@drawable/edit_cursor_style_black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="6dp">
+
+            <TextView
+                android:id="@+id/quality_text_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="旁站记录表照片"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/progress_btn_add_img"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_add" />
+
+                <ImageView
+                    android:id="@+id/progress_btn_del"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/progress_btn_add_img"
+                    android:layout_alignTop="@+id/progress_btn_add_img"
+                    android:layout_marginRight="-10dp"
+                    android:layout_marginTop="-10dp"
+                    android:padding="4dp"
+                    android:src="@drawable/icon_delete"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/progress_btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            android:background="@drawable/shape_rectangle_blue_round"
+            android:minHeight="0dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:paddingTop="10dp"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/line_gray"
+        android:orientation="vertical">
+
+        <!-- 头部 -->
+        <RelativeLayout
+            android:id="@+id/rv_top"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/ic_personal_bg">
+
+            <ImageButton
+                android:id="@+id/personal_btn_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:background="@null"
+                android:padding="10dp"
+                android:src="@drawable/set" />
+
+
+            <ImageView
+                android:id="@+id/img_head"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_head_default" />
+
+            <TextView
+                android:id="@+id/tv_personal_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_head"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="未知"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+        </RelativeLayout>
+
+
+        <!-- 内容 -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_person_post"
+                android:drawablePadding="8dp"
+                android:text="所在部门"
+                android:textColor="@color/new_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/personal_tv_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/right"
+                android:text="暂无"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_person_sex"
+                android:drawablePadding="8dp"
+                android:text="性别"
+                android:textColor="@color/new_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/personal_tv_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/right"
+                android:text="无"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/line_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/personal_tv_wechat_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_person_wx"
+                android:drawablePadding="8dp"
+                android:text="微信号"
+                android:textColor="@color/new_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/personal_tv_wechat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="end"
+                android:layout_marginLeft="10dp"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/right"
+                android:ellipsize="end"
+                android:maxEms="12"
+                android:maxLines="1"
+                android:text="暂无"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_person_phone"
+                android:drawablePadding="8dp"
+                android:text="手机号"
+                android:textColor="@color/new_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/personal_tv_mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/right"
+                android:text="暂无"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_person_telephone"
+                android:drawablePadding="8dp"
+                android:text="办公电话"
+                android:textColor="@color/new_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/personal_tv_tele"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/right"
+                android:text="暂无"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/line_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:background="@color/white"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_person_email"
+                android:drawablePadding="8dp"
+                android:text="邮箱地址"
+                android:textColor="@color/new_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/personal_tv_mail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/right"
+                android:text="暂无"
+                android:textColor="@color/middle_black"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 圆形控件 -->
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="gallery_recyclerview">
+        <attr name="helper" format="string">
+            <enum name="LinearySnapHelper" value="0" />
+            <enum name="PagerSnapHelper" value="1" />
+        </attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="LabelView">
+        <!-- 设置文字内容 -->
+        <attr name="lv_text" format="string" />
+        <!-- 设置文字颜色,默认#ffffff -->
+        <attr name="lv_text_color" format="color" />
+        <!-- 设置文字大小,默认11sp -->
+        <attr name="lv_text_size" format="dimension" />
+        <!-- 设置文字是否支持加粗,默认true -->
+        <attr name="lv_text_bold" format="boolean" />
+        <!-- 设置文字是否支持全部大写,默认true-->
+        <attr name="lv_text_all_caps" format="boolean" />
+        <!-- 设置背景颜色,默认"#FF4081"-->
+        <attr name="lv_background_color" format="color" />
+        <!-- 设置LabelView所在矩形最小宽高,默认mFillTriangle?35dp:50dp-->
+        <attr name="lv_min_size" format="dimension" />
+        <!-- 设置文字上下padding,默认3.5dp,mFillTriangle为true时无效-->
+        <attr name="lv_padding" format="dimension" />
+        <!-- 设置LabelView方向 -->
+        <attr name="lv_gravity" format="enum">
+            <enum name="TOP_LEFT" value="51" />
+            <enum name="TOP_RIGHT" value="53" />
+            <enum name="BOTTOM_LEFT" value="83" />
+            <enum name="BOTTOM_RIGHT" value="85" />
+        </attr>
+        <!-- 设置是否填充三角区域,默认false -->
+        <attr name="lv_fill_triangle" format="boolean" />
+
+    </declare-styleable>
+
+
+    <!-- 柱状图 -->
+    <declare-styleable name="MyChartView">
+        <attr name="leftColor" format="color" />
+        <attr name="leftColorBottom" format="color" />
+        <attr name="selectLeftColor" format="color" />
+        <attr name="rightColor" format="color" />
+        <attr name="rightColorBottom" format="color" />
+        <attr name="selectRightColor" format="color" />
+        <attr name="middleColor" format="color" />
+        <attr name="middleColorBottom" format="color" />
+        <attr name="selectMiddleColor" format="color" />
+        <attr name="xyColor" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="NumberPicker">
+        <attr name="normalTextColor" format="color" />
+        <attr name="normalTextSize" format="dimension" />
+        <attr name="selecredTextColor" format="color" />
+        <attr name="selecredTextSize" format="dimension" />
+        <attr name="unitHight" format="dimension" />
+        <attr name="itemNumber" format="integer"/>
+        <attr name="lineColor" format="color" />
+        <attr name="maskHight" format="dimension"/>
+        <attr name="noEmpty" format="boolean"/>
+        <attr name="isEnable" format="boolean"/>
+    </declare-styleable>
+
+    <!-- ShadowLayout 阴影 -->
+    <declare-styleable name="ShadowLayout">
+        <attr name="shadowColor" format="color"/>
+        <attr name="shadowRadius" format="dimension"/>
+        <attr name="shadowDx" format="dimension"/>
+        <attr name="shadowDy" format="dimension"/>
+        <attr name="shadowShape">
+            <flag name="rectangle" value="0x0001"/>
+            <flag name="oval" value="0x0010"/>
+        </attr>
+        <attr name="shadowSide">
+            <flag name="all" value="0x1111"/>
+            <flag name="left" value="0x0001"/>
+            <flag name="top" value="0x0010"/>
+            <flag name="right" value="0x0100"/>
+            <flag name="bottom" value="0x1000"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

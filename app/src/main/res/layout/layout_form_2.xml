@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- 测量成果报审表 -->
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="成果合格"
+            android:textColor="@color/middle_black"
+            android:textSize="14sp"
+            android:theme="@style/CustomRadioButton" />
+
+
+        <RadioButton
+            android:id="@+id/radio_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="按意见修改后执行"
+            android:textColor="@color/middle_black"
+            android:textSize="14sp"
+            android:theme="@style/CustomRadioButton" />
+
+        <RadioButton
+            android:id="@+id/radio_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重新申报"
+            android:textColor="@color/middle_black"
+            android:textSize="14sp"
+            android:theme="@style/CustomRadioButton" />
+
+
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_edit" />
+
+
+</LinearLayout>

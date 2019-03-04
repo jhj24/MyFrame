@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#245C50</color>
+    <color name="colorAccent">#FF73A3</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="white_1">#F8F8F8</color>//小白-1
+    <color name="white_2">#FEFEFE</color>//小白-2
+
+    <color name="light_black">#191919</color>
+
+    <color name="rainbow_red">#bf0c43</color>
+    <color name="rainbow_yellow">#f9ba15</color>
+    <color name="rainbow_green">#8eac00</color>
+    <color name="rainbow_blue">#127a97</color>
+    <color name="rainbow_purple">#452b72</color>
+    <color name="normal_black">#1c2627</color>
+    <color name="black">#000</color>
+    <!-- 大、中、小 字体颜色 -->
+    <color name="big_black">#333</color>
+    <color name="middle_black">#666</color>
+    <color name="small_black">#999</color>
+    <color name="new_black">#5E5E5E</color>
+    <color name="line">#f3f3f3</color>
+    <color name="line_gray">#eee</color>
+    <color name="line_edit">#F5F5F5</color>
+    <color name="line_wide">#EBEBEB</color>
+
+
+    <color name="red">#d81e06</color>
+    <color name="gray">#AAAAAA</color>
+
+    <!-- 标段 颜色 -->
+    <color name="bids_1">#009688</color>
+    <color name="bids_2">#FFBC74</color>
+    <color name="bids_3">#ED4658</color>
+    <color name="bids_4">#1C83C7</color>
+    <color name="bids_5">#91C7AE</color>
+
+    <!-- 柱状颜色 ：总计、合格、优良 -->
+    <color name="bids_total">#F7966C</color>
+    <color name="bids_qualified">#FF5722</color>
+    <color name="bids_excellent">#009688</color>
+
+    <!-- 优秀 -->
+    <color name="qualified">#00CC00</color>
+
+
+    <integer-array name="rainbow">
+        <item>@color/rainbow_red</item>
+        <item>@color/rainbow_yellow</item>
+        <item>@color/rainbow_green</item>
+        <item>@color/rainbow_blue</item>
+        <item>@color/rainbow_purple</item>
+    </integer-array>
+</resources>

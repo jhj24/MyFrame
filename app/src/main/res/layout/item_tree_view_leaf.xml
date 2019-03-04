@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llParent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white_2">
+
+    <ImageView
+        android:id="@+id/ivNode"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_tree_node"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/ivCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_uncheck"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@id/ivCheck"
+        android:layout_toRightOf="@+id/ivNode"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:text="@string/app_name"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp" />
+</RelativeLayout>

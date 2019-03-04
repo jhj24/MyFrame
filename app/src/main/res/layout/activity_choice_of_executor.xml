@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.message.ChoiceOfExecutorActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/line_gray" />
+
+    <com.zgdj.djframe.view.SearchView
+        android:id="@+id/executor_edit_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/search_bg"
+        android:drawableLeft="@drawable/v1_e_search"
+        android:drawablePadding="8dp"
+        android:drawableRight="@drawable/v1_delete"
+        android:ellipsize="end"
+        android:gravity="center_vertical|left"
+        android:hint="请输入要搜索的关键字"
+        android:imeOptions="actionSearch"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:singleLine="true"
+        android:textColor="#1c2627"
+        android:textColorHint="#a1a2a4"
+        android:textCursorDrawable="@drawable/edit_cursor_style_black"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/line_gray" />
+
+    <include layout="@layout/layout_home_tab" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_gray" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/executor_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlAccentColor="@color/small_black"
+        app:srlEnablePreviewInEditMode="false"
+        app:srlPrimaryColor="@color/white">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/executor_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <!-- 为空 -->
+    <include
+        layout="@layout/layout_empty"
+        android:visibility="gone" />
+
+
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.message.MessageRefuseApprovalActivity">
+
+    <!-- line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/line_edit" />
+
+
+    <!-- line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/line_edit" />
+    <!-- 处理意见 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/approval2_text_suggestion_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="处理意见："
+            android:textColor="@color/big_black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/approval2_edit_suggestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/approval2_text_suggestion_record"
+            android:layout_toRightOf="@+id/approval2_text_suggestion_hint"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="请输入处理意见"
+            android:lines="6"
+            android:maxLength="300"
+            android:textColor="@color/middle_black"
+            android:textCursorDrawable="@drawable/edit_cursor_style_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/approval2_text_suggestion_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/approval2_edit_suggestion"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:text="0/300"
+            android:textColor="@color/small_black"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <!-- line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_edit" />
+
+
+    <Button
+        android:id="@+id/approval2_btn_refuse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/shape_rectangle_yellow"
+        android:minHeight="44dp"
+        android:text="不通过并退回"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+
+</LinearLayout>

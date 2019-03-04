@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white_2">
+
+    <com.zgdj.djframe.view.CircleImageView
+        android:id="@+id/item_img_friends_head"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/item_tv_friends_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@+id/item_img_friends_head"
+        android:text="二狗子"
+        android:textColor="@color/big_black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/item_tv_friends_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/item_tv_friends_name"
+        android:layout_below="@+id/item_tv_friends_name"
+        android:layout_marginTop="2dp"
+        android:text="2018.05.01 10:00" />
+
+    <!-- label -->
+    <com.zgdj.djframe.view.LabelView
+        android:id="@+id/item_label_friends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        lv:lv_background_color="#3F9FE0"
+        lv:lv_gravity="TOP_RIGHT"
+        lv:lv_text="综合"
+        lv:lv_text_size="12sp" />
+
+
+    <!-- 内容 -->
+
+    <TextView
+        android:id="@+id/item_tv_friends_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_img_friends_head"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="14dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:text="对于现在的APP设计，只要有用户就会有个人中心界面，而如今获取用户对每家公司来说都是至关重要，所以什么登录注册，个人中心都是必须可少"
+        android:textColor="@color/middle_black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/item_tv_friends_looks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_tv_friends_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
+        android:text="浏览10次"
+        android:textColor="@color/small_black"
+        android:textSize="10sp" />
+
+    <ImageButton
+        android:id="@+id/item_img_friends_reply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/item_tv_friends_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:src="@drawable/reply" />
+
+    <!-- line -->
+    <View
+        android:id="@+id/item_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/item_img_friends_reply"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/line" />
+
+    <!-- 评论 -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/item_recycler_friends_reply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_line"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="4dp" />
+
+    <EditText
+        android:id="@+id/item_edit_friends_reply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_recycler_friends_reply"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_edit"
+        android:hint="评论"
+        android:padding="4dp"
+        android:textColor="@color/middle_black"
+        android:textSize="12sp" />
+
+    <!-- 分隔线 -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/item_edit_friends_reply"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_wide" />
+
+
+</RelativeLayout>

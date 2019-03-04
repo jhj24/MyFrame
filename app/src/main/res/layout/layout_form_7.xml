@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- 预应力锚索灌浆许可证 -->
+
+
+    <!-- 处理意见 -->
+    <RelativeLayout
+        android:id="@+id/layout_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/approval2_text_suggestion_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="意见："
+            android:textColor="@color/big_black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/approval2_text_suggestion_record"
+            android:layout_toRightOf="@+id/approval2_text_suggestion_hint"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="请输入审签意见"
+            android:lines="6"
+            android:maxLength="300"
+            android:textColor="@color/middle_black"
+            android:textCursorDrawable="@drawable/edit_cursor_style_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_suggestion_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/edit"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:text="0/300"
+            android:textColor="@color/small_black"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <!-- line -->
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_edit" />
+
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="同意按计划进行本次锚索张拉"
+            android:textColor="@color/middle_black"
+            android:theme="@style/CustomRadioButton"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/radio_2"
+            android:theme="@style/CustomRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="补充、完善准备工作后重新申报"
+            android:textColor="@color/middle_black"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/radio_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="完成钢筋网布设工序质量捡验后重新申报"
+            android:textColor="@color/middle_black"
+            android:theme="@style/CustomRadioButton"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <RadioButton
+            android:id="@+id/radio_4"
+            android:theme="@style/CustomRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="完善施工准备后重新申报"
+            android:textColor="@color/middle_black"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+
+    </RadioGroup>
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_edit" />
+
+
+</LinearLayout>

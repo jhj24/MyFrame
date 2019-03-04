@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- 工程建设标准强制性条文执行记录表 -->
+
+    <!-- 处理意见 -->
+    <RelativeLayout
+        android:id="@+id/layout_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/approval2_text_suggestion_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="意见："
+            android:textColor="@color/big_black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/approval2_text_suggestion_record"
+            android:layout_toRightOf="@+id/approval2_text_suggestion_hint"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="请输入审签意见"
+            android:lines="6"
+            android:maxLength="300"
+            android:textColor="@color/middle_black"
+            android:textCursorDrawable="@drawable/edit_cursor_style_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_suggestion_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/edit"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:text="0/300"
+            android:textColor="@color/small_black"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <!-- line -->
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_edit" />
+
+    <!-- 处理意见 2 -->
+    <RelativeLayout
+        android:id="@+id/layout_edit2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/approval2_text_suggestion_hint2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="意见："
+            android:textColor="@color/big_black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edit2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/approval2_text_suggestion_record"
+            android:layout_toRightOf="@+id/approval2_text_suggestion_hint2"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="请输入审签意见"
+            android:lines="6"
+            android:maxLength="300"
+            android:textColor="@color/middle_black"
+            android:textCursorDrawable="@drawable/edit_cursor_style_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_suggestion_record2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/edit2"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:text="0/300"
+            android:textColor="@color/small_black"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <!-- line -->
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_edit"
+        android:visibility="gone" />
+
+    <!-- 处理意见 2 -->
+    <RelativeLayout
+        android:id="@+id/layout_edit3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/approval2_text_suggestion_hint3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="意见："
+            android:textColor="@color/big_black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edit3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/text_suggestion_record3"
+            android:layout_toRightOf="@+id/approval2_text_suggestion_hint3"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="请输入审签意见"
+            android:lines="6"
+            android:maxLength="300"
+            android:textColor="@color/middle_black"
+            android:textCursorDrawable="@drawable/edit_cursor_style_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_suggestion_record3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/edit3"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:text="0/300"
+            android:textColor="@color/small_black"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <!-- line -->
+    <View
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_edit"
+        android:visibility="gone" />
+
+
+
+</LinearLayout>

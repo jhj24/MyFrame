@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!-- 条件选择 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="0dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/line_chart_text_year_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rectangle_spinner"
+            android:drawablePadding="6dp"
+            android:drawableRight="@drawable/yxx_triangle_down"
+            android:paddingBottom="6dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="6dp"
+            android:text="年度查询"
+            android:textColor="@color/new_black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/line_chart_text_type_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_rectangle_spinner"
+            android:drawablePadding="6dp"
+            android:drawableRight="@drawable/yxx_triangle_down"
+            android:ems="6"
+            android:paddingBottom="6dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="6dp"
+            android:text="显示选择"
+            android:textColor="@color/new_black"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/line_chart_btn_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/shape_rectangle_blue"
+            android:minHeight="0dp"
+            android:paddingBottom="6dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="6dp"
+            android:text="查询"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/chart_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textColor="@color/big_black"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/line_chart_layout_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+
+    </LinearLayout>
+
+
+    <com.zgdj.djframe.view.chart.LineChart01View
+        android:id="@+id/chart_line_view"
+        android:layout_width="match_parent"
+        android:layout_height="320dp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/line_gray" />
+
+</LinearLayout>

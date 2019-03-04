@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.message.MessageWarmingActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_gray" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/warming_card_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="标段名称"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/warming_text_file_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:text=""
+                android:textColor="@color/middle_black"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/line_gray" />
+
+            <TextView
+                android:id="@+id/warming_text_date_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="截止日期"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/warming_text_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/middle_black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <!-- 没有任务时提示语 -->
+    <TextView
+        android:id="@+id/warming_text_no_task_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/warming_card_top"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textColor="@color/middle_black"
+        android:textSize="14sp"
+        android:visibility="gone" />
+    <!-- 滞后任务列表提示语  -->
+    <TextView
+        android:id="@+id/warming_text_recycler_task_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/warming_card_top"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:text="滞后任务"
+        android:textColor="@color/big_black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/warming_text_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/warming_text_recycler_task_hint"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="18dp"
+        android:drawableRight="@drawable/right"
+        android:text="更多"
+        android:visibility="gone"
+        android:textColor="@color/middle_black"
+        android:textSize="14sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/warming_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/warming_text_explain_hint"
+        android:layout_below="@+id/warming_text_recycler_task_hint"
+
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="0dp" />
+
+    <!-- 说明 -->
+    <TextView
+        android:id="@+id/warming_text_explain_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/warming_text_explain"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="16dp"
+        android:text="说明"
+        android:textColor="@color/red"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/warming_text_explain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/warming_button_ok"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textColor="@color/small_black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/warming_button_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/shape_rectangle_blue_round"
+        android:minHeight="42dp"
+        android:text="签收"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+</RelativeLayout>

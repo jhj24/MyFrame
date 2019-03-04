@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_2"
+    android:orientation="vertical"
+    tools:context=".activity.work.SupervisionLogActivity">
+
+    <!-- 监理日志 -->
+
+    <LinearLayout
+        android:id="@+id/layout_supervision_select_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_supervision_select_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/down"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="全部"
+            android:textColor="@color/middle_black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/line" />
+
+        <TextView
+            android:id="@+id/tv_supervision_select_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/down"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="时间"
+            android:textColor="@color/middle_black"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/line" />
+
+
+    <!-- 列表 -->
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/layout_supervision_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_supervision"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>

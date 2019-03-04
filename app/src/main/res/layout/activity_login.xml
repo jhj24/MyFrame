@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_login_bg"
+    tools:context=".activity.personal.LoginActivity">
+
+    <TextView
+        android:id="@+id/tv_login_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="80dp"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="丰宁抽水蓄能电站数字化电站系统"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/login_layout_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/login_layout_password"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_user" />
+
+        <EditText
+            android:id="@+id/edit_login_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/et_underline_selector"
+            android:hint="请输入用户名或手机号"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@+id/edit_login_user_psd"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/middle_black"
+            android:textCursorDrawable="@drawable/edit_cursor_color"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/login_layout_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_password" />
+
+        <EditText
+            android:id="@+id/edit_login_user_psd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/et_underline_selector"
+            android:hint="请输入6-16位密码"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/middle_black"
+            android:textCursorDrawable="@drawable/edit_cursor_color"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_login_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_layout_password"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/shape_rectangle_blue_round"
+        android:minHeight="0dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="登  录"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.message.MessageRemindActivity">
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_gray" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/remind_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line1"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="标段名称"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/remind_text_file_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:text=""
+                android:textColor="@color/middle_black"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/line_gray" />
+
+            <TextView
+                android:id="@+id/remind_text_interval_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="填报时段"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/remind_text_interval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:text=""
+                android:textColor="@color/middle_black"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/lin2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/line_gray"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/remind_text_date_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="提醒日期"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/remind_text_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/middle_black"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/line_gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="负责人"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/remind_text_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/middle_black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/remind_text_content_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/remind_card"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="提醒内容"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/remind_text_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/remind_text_content_hint"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="6dp"
+        android:text=""
+        android:textColor="@color/middle_black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/remind_text_control_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/remind_text_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="填报操作"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/remind_text_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/remind_text_control_hint"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="6dp"
+        android:text=""
+        android:textColor="@color/middle_black"
+        android:textSize="14sp" />
+
+    <!-- 列表 -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/remind_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/remind_button_ok"
+        android:layout_below="@+id/remind_card"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone" />
+
+
+    <Button
+        android:id="@+id/remind_button_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/shape_rectangle_blue_round"
+        android:minHeight="42dp"
+        android:text="签收"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+
+</RelativeLayout>
