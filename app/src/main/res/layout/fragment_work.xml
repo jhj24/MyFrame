@@ -35,8 +35,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:background="@color/white"
-                android:paddingBottom="16dp"
-                android:paddingTop="16dp" />
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp" />
 
 
             <!-- 质量管理 -->
@@ -57,11 +57,11 @@
                 android:id="@+id/work_recycler_quality"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="0dp"
                 android:layout_marginTop="1dp"
+                android:layout_marginBottom="0dp"
                 android:background="@color/white"
-                android:paddingBottom="16dp"
-                android:paddingTop="16dp" />
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp" />
 
 
             <!-- 进度管理 -->
@@ -86,13 +86,64 @@
                     android:id="@+id/work_recycler_progress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
                     android:layout_marginTop="1dp"
                     android:background="@color/white"
-                    android:paddingBottom="16dp"
-                    android:paddingTop="16dp" />
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp" />
             </RelativeLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="图纸文档管理"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/work_recycler_document"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/white"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="标准库管理"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/work_recycler_standard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/white"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp" />
+            </RelativeLayout>
         </LinearLayout>
 
 

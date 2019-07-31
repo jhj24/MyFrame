@@ -8,11 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.zgdj.djframe.R;
+import com.zgdj.djframe.activity.work.DocumentTreeActivity;
 import com.zgdj.djframe.activity.work.ModelAllActivity;
 import com.zgdj.djframe.activity.work.ModelRealActivity;
 import com.zgdj.djframe.activity.work.ProgressRealTimeActivity;
 import com.zgdj.djframe.activity.work.QualityControlActivity;
 import com.zgdj.djframe.activity.work.QualityEvaluationActivity;
+import com.zgdj.djframe.activity.work.StandardTreeActivity;
 import com.zgdj.djframe.adapter.WorkAdapter;
 import com.zgdj.djframe.base.BaseFragment;
 import com.zgdj.djframe.bean.WorkBean;
@@ -34,9 +36,13 @@ public class WorkFragment extends BaseFragment {
     private RecyclerView recyclerModel;//模型管理
     private RecyclerView recyclerQuality;//质量管理
     private RecyclerView recyclerProgress;//进度管理
+    private RecyclerView recyclerDocument;//图册
+    private RecyclerView recyclerStandard;//标准与规范
     private List<WorkBean> modelList;//模型list
     private List<WorkBean> qualityList;//模型list
     private List<WorkBean> progressList;//进度list
+    private List<WorkBean> documentList;//进度list
+    private List<WorkBean> standardList;//进度list
 
     public static WorkFragment newInstance() {
         Bundle args = new Bundle();
@@ -61,6 +67,8 @@ public class WorkFragment extends BaseFragment {
         recyclerModel = view.findViewById(R.id.work_recycler_model);
         recyclerQuality = view.findViewById(R.id.work_recycler_quality);
         recyclerProgress = view.findViewById(R.id.work_recycler_progress);
+        recyclerDocument = view.findViewById(R.id.work_recycler_document);
+        recyclerStandard = view.findViewById(R.id.work_recycler_standard);
 
 
 //        view.findViewById(R.id.work_btn_quality_control).setOnClickListener(this);//质量管控
@@ -86,6 +94,15 @@ public class WorkFragment extends BaseFragment {
         progressList = new ArrayList<>();
         progressList.add(new WorkBean("实时进度", R.drawable.icon_progress));
         setRecycler(recyclerProgress, progressList, 3);
+
+
+        documentList = new ArrayList<>();
+        documentList.add(new WorkBean("图册管理", R.drawable.icon_progress));
+        setRecycler(recyclerDocument, documentList, 4);
+
+        standardList = new ArrayList<>();
+        standardList.add(new WorkBean("工程标准与规范", R.drawable.icon_progress));
+        setRecycler(recyclerStandard, standardList, 5);
 
     }
 
@@ -125,6 +142,22 @@ public class WorkFragment extends BaseFragment {
                 switch (position) {
                     case 0: //实时进度
                         jumpToInterface(ProgressRealTimeActivity.class);
+                        break;
+
+                }
+
+            } else if (type == 4) { //图纸文档管理
+                switch (position) {
+                    case 0: //图册管理
+                        jumpToInterface(DocumentTreeActivity.class);
+                        break;
+
+                }
+
+            } else if (type == 5) { //工程库管理
+                switch (position) {
+                    case 0: //工程标准与规范
+                        jumpToInterface(StandardTreeActivity.class);
                         break;
 
                 }
