@@ -146,6 +146,7 @@
         <activity android:name=".activity.work.QualityEvaluationContentDetailActivity" />
         <activity android:name=".activity.other.WebH5Activity" />
         <activity android:name=".activity.work.DocumentTreeActivity" />
+        <activity android:name=".activity.work.DocumentFileActivity" />
         <activity android:name=".activity.work.StandardTreeActivity" />
         <activity android:name=".activity.work.StandardFileActivity" />
 
