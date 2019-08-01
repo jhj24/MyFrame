@@ -10,6 +10,7 @@ import com.google.gson.Gson
 import com.zgdj.djframe.R
 import com.zgdj.djframe.activity.work.DocumentDownloadHistoryListActivity
 import com.zgdj.djframe.activity.work.DocumentFileChildEditActivity
+import com.zgdj.djframe.activity.work.DocumentShareActivity
 import com.zgdj.djframe.base.rv.BaseViewHolder
 import com.zgdj.djframe.base.rv.adapter.SingleAdapter
 import com.zgdj.djframe.bean.DocumentFileBean
@@ -71,7 +72,9 @@ class DocumentFileChildAdapter(list: MutableList<DocumentFileBean.DataBean>?, la
                         }
                         share.setOnClickListener {
                             dialog?.dismissDlg()
-
+                            val intent = Intent(mContext, DocumentShareActivity::class.java)
+                            intent.putExtra("documentId", data.id)
+                            mContext.startActivity(intent)
                         }
                         read.setOnClickListener {
                             dialog?.dismissDlg()

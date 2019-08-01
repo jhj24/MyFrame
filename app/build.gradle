@@ -104,4 +104,5 @@ dependencies {
     implementation 'com.lidong.pdf:android_pdf:1.0.1'
     //kotlin 支持库
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.jhj24:FlowTag:v1.0.0'
 }

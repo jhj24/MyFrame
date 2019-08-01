@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.zgdj.djframe.R
 import com.zgdj.djframe.activity.work.DocumentFileActivity
-import com.zgdj.djframe.base.single.BaseSingleTreeAdapter
+import com.zgdj.djframe.base.tree.BaseSingleTreeAdapter
 import com.zgdj.djframe.bean.DocumentTreeBean
 import kotlinx.android.synthetic.main.item_tree_view_leaf.view.*
 

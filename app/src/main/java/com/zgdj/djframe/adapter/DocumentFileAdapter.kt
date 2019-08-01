@@ -11,6 +11,7 @@ import com.zgdj.djframe.R
 import com.zgdj.djframe.activity.work.DocumentDownloadHistoryListActivity
 import com.zgdj.djframe.activity.work.DocumentFileChildActivity
 import com.zgdj.djframe.activity.work.DocumentFileEditActivity
+import com.zgdj.djframe.activity.work.DocumentShareActivity
 import com.zgdj.djframe.base.rv.BaseViewHolder
 import com.zgdj.djframe.base.rv.adapter.SingleAdapter
 import com.zgdj.djframe.bean.DocumentFileBean
@@ -54,6 +55,7 @@ class DocumentFileAdapter(list: MutableList<DocumentFileBean.DataBean>?, layoutI
                         val download = window.findViewById<TextView>(R.id.tv_download)
                         val downloadHistory = window.findViewById<TextView>(R.id.tv_download_history)
                         val edit = window.findViewById<TextView>(R.id.tv_edit)
+                        val share = window.findViewById<TextView>(R.id.tv_share)
                         val draw = window.findViewById<TextView>(R.id.tv_draw)
                         val delete = window.findViewById<TextView>(R.id.tv_delete)
                         val cancel = window.findViewById<TextView>(R.id.tv_cancel)
@@ -64,6 +66,12 @@ class DocumentFileAdapter(list: MutableList<DocumentFileBean.DataBean>?, layoutI
                         downloadHistory.setOnClickListener {
                             dialog?.dismissDlg()
                             val intent = Intent(mContext, DocumentDownloadHistoryListActivity::class.java)
+                            intent.putExtra("documentId", data.id)
+                            mContext.startActivity(intent)
+                        }
+                        share.setOnClickListener {
+                            dialog?.dismissDlg()
+                            val intent = Intent(mContext, DocumentShareActivity::class.java)
                             intent.putExtra("documentId", data.id)
                             mContext.startActivity(intent)
                         }

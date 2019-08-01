@@ -150,6 +150,8 @@
         <activity android:name=".activity.work.DocumentFileChildActivity" />
         <activity android:name=".activity.work.DocumentDownloadHistoryListActivity" />
         <activity android:name=".activity.work.DocumentFileEditActivity" />
+        <activity android:name=".activity.work.DocumentShareActivity" />
+        <activity android:name=".activity.work.DocumentShareSelectorActivity" />
         <activity android:name=".activity.work.StandardTreeActivity" />
         <activity android:name=".activity.work.StandardFileActivity" />
 

@@ -1,8 +1,12 @@
 package com.zgdj.djframe.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class DocumentTreeBean extends BaseTree<DocumentTreeBean> {
+public class DocumentTreeBean extends BaseTree<DocumentTreeBean> implements Parcelable {
 
     /**
      * id : 1
@@ -66,4 +70,42 @@ public class DocumentTreeBean extends BaseTree<DocumentTreeBean> {
     public void setChildren(List<DocumentTreeBean> children) {
         this.children = children;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeString(this.name);
+        dest.writeInt(this.pid);
+        dest.writeInt(this.sort_id);
+        dest.writeList(this.children);
+    }
+
+    public DocumentTreeBean() {
+    }
+
+    protected DocumentTreeBean(Parcel in) {
+        this.id = in.readInt();
+        this.name = in.readString();
+        this.pid = in.readInt();
+        this.sort_id = in.readInt();
+        this.children = new ArrayList<DocumentTreeBean>();
+        in.readList(this.children, DocumentTreeBean.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<DocumentTreeBean> CREATOR = new Parcelable.Creator<DocumentTreeBean>() {
+        @Override
+        public DocumentTreeBean createFromParcel(Parcel source) {
+            return new DocumentTreeBean(source);
+        }
+
+        @Override
+        public DocumentTreeBean[] newArray(int size) {
+            return new DocumentTreeBean[size];
+        }
+    };
 }

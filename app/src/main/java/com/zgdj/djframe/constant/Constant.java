@@ -140,6 +140,10 @@ public class Constant {
     public static final String URL_WORK_DOCUMENT_DELETE = BASE_URL + "/api/Appatlas/delCateone";
     public static final String URL_WORK_DOCUMENT_DOWNLOAD = BASE_URL + "/api/Appatlas/atlascateDownload";
     public static final String URL_WORK_DOCUMENT_DOWNLOAD_HISTORY = BASE_URL + "/api/Appatlas/atlasDownList";
+    public static final String URL_WORK_DOCUMENT_SHARE_TREE = BASE_URL + "/api/Appatlas/getOrganization";
+    public static final String URL_WORK_DOCUMENT_SHARE_ADD = BASE_URL + "/api/Appatlas/addAdminname";// 添加白名单
+    public static final String URL_WORK_DOCUMENT_SHARE_GET = BASE_URL + "/api/Appatlas/getAdminname";// 获取白名单
+    public static final String URL_WORK_DOCUMENT_SHARE_DEL = BASE_URL + "/api/Appatlas/delAdminname";// 删除白名单
 
 
     /*************************************  URL  **********************************************/
