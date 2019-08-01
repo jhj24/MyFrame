@@ -84,7 +84,7 @@ class DocumentFileAdapter(list: MutableList<DocumentFileBean.DataBean>?, layoutI
                         draw.setOnClickListener {
                             dialog?.dismissDlg()
                             val intent = Intent(mContext, DocumentFileChildActivity::class.java)
-                            intent.putExtra("data", data.children.toArrayList())
+                            intent.putExtra("data", data)
                             mContext.startActivity(intent)
                         }
                         delete.setOnClickListener {

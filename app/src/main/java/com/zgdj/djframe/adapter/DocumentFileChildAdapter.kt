@@ -3,17 +3,20 @@ package com.zgdj.djframe.adapter
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.os.Bundle
 import android.view.Gravity
 import android.widget.ImageView
 import android.widget.TextView
 import com.google.gson.Gson
 import com.zgdj.djframe.R
+import com.zgdj.djframe.activity.other.PDFActivity
+import com.zgdj.djframe.activity.other.PhotoViewActivity
 import com.zgdj.djframe.activity.work.DocumentDownloadHistoryListActivity
-import com.zgdj.djframe.activity.work.DocumentFileChildEditActivity
 import com.zgdj.djframe.activity.work.DocumentShareActivity
 import com.zgdj.djframe.base.rv.BaseViewHolder
 import com.zgdj.djframe.base.rv.adapter.SingleAdapter
 import com.zgdj.djframe.bean.DocumentFileBean
+import com.zgdj.djframe.bean.ImageBean
 import com.zgdj.djframe.constant.Constant
 import com.zgdj.djframe.model.FileModel
 import com.zgdj.djframe.utils.*
@@ -22,6 +25,8 @@ import org.json.JSONException
 import org.xutils.common.Callback
 import org.xutils.http.RequestParams
 import org.xutils.x
+import java.io.Serializable
+import java.util.*
 
 /**
  * description:实时进度adapter
@@ -56,7 +61,6 @@ class DocumentFileChildAdapter(list: MutableList<DocumentFileBean.DataBean>?, la
                         val download = window.findViewById<TextView>(R.id.tv_download)
                         val downloadHistory = window.findViewById<TextView>(R.id.tv_download_history)
                         val share = window.findViewById<TextView>(R.id.tv_share)
-                        val edit = window.findViewById<TextView>(R.id.tv_edit)
                         val read = window.findViewById<TextView>(R.id.tv_read)
                         val delete = window.findViewById<TextView>(R.id.tv_delete)
                         val cancel = window.findViewById<TextView>(R.id.tv_cancel)
@@ -78,15 +82,8 @@ class DocumentFileChildAdapter(list: MutableList<DocumentFileBean.DataBean>?, la
                         }
                         read.setOnClickListener {
                             dialog?.dismissDlg()
-
+                            display(data.filepath, data.fileid)
                         }
-                        edit.setOnClickListener {
-                            dialog?.dismissDlg()
-                            val intent = Intent(mContext, DocumentFileChildEditActivity::class.java)
-                            intent.putExtra("data", data.children.toArrayList())
-                            mContext.startActivity(intent)
-                        }
-
                         delete.setOnClickListener {
                             dialog?.dismissDlg()
                             mContext.delete(Constant.URL_WORK_DOCUMENT_DELETE, "是否删除${data.picture_name}？", "id" to data.id.toString()) {
@@ -103,6 +100,26 @@ class DocumentFileChildAdapter(list: MutableList<DocumentFileBean.DataBean>?, la
 
                 }
             }
+        }
+    }
+
+    fun display(path: String, id: Int) {
+        val suffix = path.getFileSuffix()
+        if (suffix == "jpg" || suffix == "png" || suffix == "gif") {
+            val imgList = ArrayList<ImageBean>()
+            imgList.add(ImageBean(Constant.BASE_URL + path, 2))
+            val bundle = Bundle()
+            bundle.putSerializable(PhotoViewActivity.KEY_IMAGE_LIST, imgList as Serializable)
+            bundle.putInt(PhotoViewActivity.KEY_IMAGE_POSITION, 0)
+            mContext.startActivity(Intent(mContext, PhotoViewActivity::class.java).putExtras(bundle))
+        } else if (suffix == "pdf" || suffix == "xls" || suffix == "docx" || suffix == "doc") {
+            val intent = Intent(mContext, PDFActivity::class.java)
+            intent.putExtra("key_url", Constant.BASE_URL + path)
+            intent.putExtra("file_type", suffix)
+            intent.putExtra("file_name", path.getFileName())
+            intent.putExtra("file_id", id.toString())
+            intent.putExtra("is_download", false)
+            mContext.startActivity(intent)
         }
     }
 

@@ -10,6 +10,14 @@ fun String.getFileName(): String {
     return this
 }
 
+fun String.getFileSuffix():String{
+    val index = this.lastIndexOf(".")
+    if (index != -1) {
+        return this.substring(index + 1, this.length)
+    }
+    return this
+}
+
 fun <T> List<T>?.toArrayList(): ArrayList<T> {
     return ArrayList(this.orEmpty())
 }

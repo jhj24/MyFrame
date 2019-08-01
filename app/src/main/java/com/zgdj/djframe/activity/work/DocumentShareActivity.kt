@@ -32,7 +32,6 @@ class DocumentShareActivity : BaseNormalActivity() {
         if (key == -0x00100000) {
             throw IllegalArgumentException("传参错误")
         }
-
     }
 
     override fun bindLayout(): Int {

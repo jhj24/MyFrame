@@ -38,6 +38,7 @@ public class PDFActivity extends BaseNormalActivity implements OnPageChangeListe
     private String fileName;//文件名称
     private String fileType;//文件类型
     private String fileId;//文件ID
+    private boolean isDownload = true;
 
     private LoadingDialog loadingDialog;
 
@@ -49,6 +50,7 @@ public class PDFActivity extends BaseNormalActivity implements OnPageChangeListe
             fileName = bundle.getString("file_name");
             fileType = bundle.getString("file_type");
             fileId = bundle.getString("file_id");
+            isDownload = bundle.getBoolean("is_download", true);
         }
 
     }
@@ -71,7 +73,9 @@ public class PDFActivity extends BaseNormalActivity implements OnPageChangeListe
         setTitle("查看PDF文档");
         checkPermission();
         //下载按钮
-        setRightOnclick("下载", this::downloadPDF);
+        if (isDownload) {
+            setRightOnclick("下载", this::downloadPDF);
+        }
 
 //        loadUrl = "http://file.chmsp.com.cn/colligate/file/00100000224821.pdf";
 //        displayFromFile1(loadUrl, "test.pdf");
@@ -223,7 +227,7 @@ public class PDFActivity extends BaseNormalActivity implements OnPageChangeListe
                                 if (object.has("path")) {
                                     displayFromFile1("http://" + object.getString("path"), fileName);//fileName
                                 }
-                            }else if (object.getInt("code") == -2) {
+                            } else if (object.getInt("code") == -2) {
                                 ToastUtils.showShort(Constant.TOKEN_LOST);
                             }
                         }

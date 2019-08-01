@@ -17,12 +17,14 @@ class DocumentFileChildActivity : BaseNormalActivity(), INotifyListener {
 
 
     private var dataList: ArrayList<DocumentFileBean.DataBean>? = null
+    private var data: DocumentFileBean.DataBean? = null
     private lateinit var listDialog: ListViewDialog
     private lateinit var adapter: DocumentFileChildAdapter
 
 
     override fun initData(bundle: Bundle?) {
-        dataList = bundle?.getParcelableArrayList<DocumentFileBean.DataBean>("data")
+        data = bundle?.getParcelable<DocumentFileBean.DataBean>("data")
+        dataList = data?.children.toArrayList()
     }
 
     override fun bindLayout(): Int {
@@ -30,7 +32,7 @@ class DocumentFileChildActivity : BaseNormalActivity(), INotifyListener {
     }
 
     override fun initView(savedInstanceState: Bundle?, view: View?) {
-        title = "图册管理"
+        title = "图纸管理"
         listDialog = ListViewDialog(this)
         adapter = DocumentFileChildAdapter(dataList, R.layout.item_recycler_document_file_child)
         layout_refresh.isEnableLoadMore = false;
@@ -38,6 +40,12 @@ class DocumentFileChildActivity : BaseNormalActivity(), INotifyListener {
         recycler_view.adapter = adapter
         recycler_view.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         NotifyListenerMangager.getInstance().registerListener(this, "DocumentFileChildActivity")
+        setRightOnclick("添加") {
+            val bundle = Bundle()
+            bundle.putString("code", data?.picture_number)
+            bundle.putInt("id", data?.id ?: -1)
+            jumpToInterface(DocumentFileChildEditActivity::class.java, bundle)
+        }
     }
 
 

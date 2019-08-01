@@ -3,7 +3,6 @@ package com.zgdj.djframe.bean;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DocumentFileBean {
@@ -87,6 +86,8 @@ public class DocumentFileBean {
         private String paper_category;
         private String owner;
         private String create_time;
+        private String filepath;
+        private int fileid;
         private List<DataBean> children;
 
         public int getId() {
@@ -209,6 +210,22 @@ public class DocumentFileBean {
             this.create_time = create_time;
         }
 
+        public String getFilepath() {
+            return filepath;
+        }
+
+        public void setFilepath(String filepath) {
+            this.filepath = filepath;
+        }
+
+        public int getFileid() {
+            return fileid;
+        }
+
+        public void setFileid(int fileid) {
+            this.fileid = fileid;
+        }
+
         public List<DataBean> getChildren() {
             return children;
         }
@@ -217,6 +234,9 @@ public class DocumentFileBean {
             this.children = children;
         }
 
+
+        public DataBean() {
+        }
 
         @Override
         public int describeContents() {
@@ -240,10 +260,9 @@ public class DocumentFileBean {
             dest.writeString(this.paper_category);
             dest.writeString(this.owner);
             dest.writeString(this.create_time);
+            dest.writeString(this.filepath);
+            dest.writeInt(this.fileid);
             dest.writeTypedList(this.children);
-        }
-
-        public DataBean() {
         }
 
         protected DataBean(Parcel in) {
@@ -262,6 +281,8 @@ public class DocumentFileBean {
             this.paper_category = in.readString();
             this.owner = in.readString();
             this.create_time = in.readString();
+            this.filepath = in.readString();
+            this.fileid = in.readInt();
             this.children = in.createTypedArrayList(DataBean.CREATOR);
         }
 

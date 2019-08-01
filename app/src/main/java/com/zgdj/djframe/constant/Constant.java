@@ -144,6 +144,7 @@ public class Constant {
     public static final String URL_WORK_DOCUMENT_SHARE_ADD = BASE_URL + "/api/Appatlas/addAdminname";// 添加白名单
     public static final String URL_WORK_DOCUMENT_SHARE_GET = BASE_URL + "/api/Appatlas/getAdminname";// 获取白名单
     public static final String URL_WORK_DOCUMENT_SHARE_DEL = BASE_URL + "/api/Appatlas/delAdminname";// 删除白名单
+    public static final String URL_WORK_DOCUMENT_PICTURE_ADD = BASE_URL + "/api/Appatlas/addPicture";// 新增图纸
 
 
     /*************************************  URL  **********************************************/
