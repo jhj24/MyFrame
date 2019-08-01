@@ -91,8 +91,9 @@ class StandardFileAdapter(list: MutableList<StandardFileBean.DataBean>?, layoutI
         val loadingDialog = LoadingDialog(mContext)
         loadingDialog.setSpinnerType(0)
         val requestParams = RequestParams(Constant.BASE_URL + url)
+        val filePath = FileUtils.getSDPath("download") + url.getFileName()
         requestParams.isAutoRename = false//取消自动命名
-        requestParams.saveFilePath = FileUtils.getSDPath() + url.getFileName()
+        requestParams.saveFilePath = filePath
         x.http().get(requestParams, object : Callback.ProgressCallback<File> {
             override fun onWaiting() {}
 
@@ -104,7 +105,7 @@ class StandardFileAdapter(list: MutableList<StandardFileBean.DataBean>?, layoutI
             override fun onLoading(total: Long, current: Long, isDownloading: Boolean) {}
 
             override fun onSuccess(result: File) {
-                ToastUtils.showShort("下载完成！\n 下载路径：" + FileUtils.getSDPath())
+                ToastUtils.showShort("下载完成！\n 下载路径：" + filePath)
             }
 
             override fun onError(ex: Throwable, isOnCallback: Boolean) {

@@ -14,6 +14,7 @@
         android:background="@color/line_gray" />
 
     <LinearLayout
+        android:id="@+id/layout_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -30,7 +31,6 @@
             android:layout_toLeftOf="@+id/img_home_message"
             android:layout_toRightOf="@+id/line_home_search"
             android:background="@drawable/search_bg"
-            android:cursorVisible="false"
             android:drawableLeft="@drawable/v1_e_search"
             android:drawableRight="@drawable/v1_delete"
             android:drawablePadding="5dp"

@@ -24,7 +24,7 @@ class StandardTreeAdapter(val mCon: Context) : BaseSingleTreeAdapter<StandardTre
             tvName.text = data.name
             ivNode.rotation = if (data.isShowChildren) 90f else 0f
             val paddingLeft = dp10 + dataList[position].itemLevels * 2 * dp10
-            llParent.setPadding(paddingLeft, 0,0, 0)
+            llParent.setPadding(paddingLeft, 0, 0, 0)
             holder.itemView.setOnClickListener {
                 if (data.isRoot) {
                     itemViewOnClick(data)

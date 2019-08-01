@@ -19,6 +19,8 @@ import java.net.URL;
  */
 public class FileUtils {
 
+    private static final String PROJECT_DIR = "fengning";
+
     /**
      * 创建文件目录
      */
@@ -46,6 +48,42 @@ public class FileUtils {
         } else {
             return "";
         }
+    }
+
+    public static String getSDPath(String subDir) {
+        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+            String path = Environment.getExternalStorageDirectory().getAbsolutePath();
+            if (!path.endsWith("/")) {
+                path += "/";
+            }
+            path += PROJECT_DIR + "/";
+            if (subDir != null && subDir.trim().length() > 0) {
+                path += subDir + "/";
+            }
+            File file = new File(path);
+            if (!file.exists()) {
+                if (file.mkdirs()) {
+                    return path;
+                } else {
+                    return null;
+                }
+            } else {
+                if (file.isFile()) {
+                    if ((file.delete())) {
+                        if (file.mkdirs()) {
+                            return path;
+                        } else {
+                            return null;
+                        }
+                    } else {
+                        return null;
+                    }
+                } else {
+                    return path;
+                }
+            }
+        }
+        return null;
     }
 
     public static void downLoad(String path, Context context) throws Exception {
@@ -164,7 +202,6 @@ public class FileUtils {
         }
         return null;
     }
-
 
 
 }

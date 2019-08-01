@@ -1,5 +1,9 @@
 package com.zgdj.djframe.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class DocumentFileBean {
@@ -48,7 +52,7 @@ public class DocumentFileBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Parcelable {
         /**
          * id : 15
          * pid : 0
@@ -83,7 +87,7 @@ public class DocumentFileBean {
         private String paper_category;
         private String owner;
         private String create_time;
-        private List<?> children;
+        private List<DataBean> children;
 
         public int getId() {
             return id;
@@ -205,12 +209,72 @@ public class DocumentFileBean {
             this.create_time = create_time;
         }
 
-        public List<?> getChildren() {
+        public List<DataBean> getChildren() {
             return children;
         }
 
-        public void setChildren(List<?> children) {
+        public void setChildren(List<DataBean> children) {
             this.children = children;
         }
+
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeInt(this.id);
+            dest.writeInt(this.pid);
+            dest.writeInt(this.cate_number);
+            dest.writeString(this.picture_number);
+            dest.writeString(this.picture_name);
+            dest.writeInt(this.picture_papaer_num);
+            dest.writeString(this.a1_picture);
+            dest.writeString(this.design_name);
+            dest.writeString(this.check_name);
+            dest.writeString(this.examination_name);
+            dest.writeString(this.completion_time);
+            dest.writeString(this.section);
+            dest.writeString(this.paper_category);
+            dest.writeString(this.owner);
+            dest.writeString(this.create_time);
+            dest.writeTypedList(this.children);
+        }
+
+        public DataBean() {
+        }
+
+        protected DataBean(Parcel in) {
+            this.id = in.readInt();
+            this.pid = in.readInt();
+            this.cate_number = in.readInt();
+            this.picture_number = in.readString();
+            this.picture_name = in.readString();
+            this.picture_papaer_num = in.readInt();
+            this.a1_picture = in.readString();
+            this.design_name = in.readString();
+            this.check_name = in.readString();
+            this.examination_name = in.readString();
+            this.completion_time = in.readString();
+            this.section = in.readString();
+            this.paper_category = in.readString();
+            this.owner = in.readString();
+            this.create_time = in.readString();
+            this.children = in.createTypedArrayList(DataBean.CREATOR);
+        }
+
+        public static final Creator<DataBean> CREATOR = new Creator<DataBean>() {
+            @Override
+            public DataBean createFromParcel(Parcel source) {
+                return new DataBean(source);
+            }
+
+            @Override
+            public DataBean[] newArray(int size) {
+                return new DataBean[size];
+            }
+        };
     }
 }

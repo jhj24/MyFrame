@@ -137,6 +137,9 @@ public class Constant {
 
     public static final String URL_WORK_DOCUMENT_TREE = BASE_URL + "/api/Appatlas/atlasTree";
     public static final String URL_WORK_DOCUMENT_LIST = BASE_URL + "/api/Appatlas/atlasList";
+    public static final String URL_WORK_DOCUMENT_DELETE = BASE_URL + "/api/Appatlas/delCateone";
+    public static final String URL_WORK_DOCUMENT_DOWNLOAD = BASE_URL + "/api/Appatlas/atlascateDownload";
+    public static final String URL_WORK_DOCUMENT_DOWNLOAD_HISTORY = BASE_URL + "/api/Appatlas/atlasDownList";
 
 
     /*************************************  URL  **********************************************/

@@ -9,8 +9,7 @@ import android.widget.TextView
 import com.google.gson.Gson
 import com.zgdj.djframe.R
 import com.zgdj.djframe.activity.work.DocumentDownloadHistoryListActivity
-import com.zgdj.djframe.activity.work.DocumentFileChildActivity
-import com.zgdj.djframe.activity.work.DocumentFileEditActivity
+import com.zgdj.djframe.activity.work.DocumentFileChildEditActivity
 import com.zgdj.djframe.base.rv.BaseViewHolder
 import com.zgdj.djframe.base.rv.adapter.SingleAdapter
 import com.zgdj.djframe.bean.DocumentFileBean
@@ -27,7 +26,7 @@ import org.xutils.x
  * description:实时进度adapter
  * author: Created by Mr.Zhang on 2018/7/23
  */
-class DocumentFileAdapter(list: MutableList<DocumentFileBean.DataBean>?, layoutId: Int) :
+class DocumentFileChildAdapter(list: MutableList<DocumentFileBean.DataBean>?, layoutId: Int) :
         SingleAdapter<DocumentFileBean.DataBean>(list, layoutId) {
     private var dialog: CustomerDialog? = null
 
@@ -35,26 +34,29 @@ class DocumentFileAdapter(list: MutableList<DocumentFileBean.DataBean>?, layoutI
     @SuppressLint("SetTextI18n")
     override fun bind(holder: BaseViewHolder?, data: DocumentFileBean.DataBean?) {
         holder?.let {
-            val title = it.getView<TextView>(R.id.tv_title)
-            val code = it.getView<TextView>(R.id.tv_code)
-            val time = it.getView<TextView>(R.id.tv_time)
+            val title = it.getView<TextView>(R.id.item_tv_progress_bids) //标题
+            val newspaper = it.getView<TextView>(R.id.item_tv_progress_newspaper) //填报人
+            val date = it.getView<TextView>(R.id.item_tv_progress_date) //日期
+            val reMarks = it.getView<TextView>(R.id.item_tv_progress_remarks) //备注
             val more = it.getView<ImageView>(R.id.iv_more)
 
-            // 赋值
             if (data != null) {
                 title.text = data.picture_name
-                code.text = data.picture_number
-                time.text = data.create_time
+                newspaper.text = "上传人：${data.owner}"
+                date.text = "日期：${data.create_time}"
+                reMarks.text = "编号：${data.picture_number}"
+
                 more.setOnClickListener {
                     if (dialog == null) {
-                        dialog = CustomerDialog(mContext as Activity, R.layout.dialog_document_file)
+                        dialog = CustomerDialog(mContext as Activity, R.layout.dialog_document_file_child)
                         dialog?.setDlgIfClick(true)
                     }
                     dialog?.setOnCustomerViewCreated { window, dlg ->
                         val download = window.findViewById<TextView>(R.id.tv_download)
                         val downloadHistory = window.findViewById<TextView>(R.id.tv_download_history)
+                        val share = window.findViewById<TextView>(R.id.tv_share)
                         val edit = window.findViewById<TextView>(R.id.tv_edit)
-                        val draw = window.findViewById<TextView>(R.id.tv_draw)
+                        val read = window.findViewById<TextView>(R.id.tv_read)
                         val delete = window.findViewById<TextView>(R.id.tv_delete)
                         val cancel = window.findViewById<TextView>(R.id.tv_cancel)
                         download.setOnClickListener {
@@ -67,23 +69,23 @@ class DocumentFileAdapter(list: MutableList<DocumentFileBean.DataBean>?, layoutI
                             intent.putExtra("documentId", data.id)
                             mContext.startActivity(intent)
                         }
+                        share.setOnClickListener {
+                            dialog?.dismissDlg()
+
+                        }
+                        read.setOnClickListener {
+                            dialog?.dismissDlg()
+
+                        }
                         edit.setOnClickListener {
                             dialog?.dismissDlg()
-                            val intent = Intent(mContext, DocumentFileEditActivity::class.java)
+                            val intent = Intent(mContext, DocumentFileChildEditActivity::class.java)
                             intent.putExtra("data", data.children.toArrayList())
                             mContext.startActivity(intent)
                         }
-                        draw.setOnClickListener {
-                            dialog?.dismissDlg()
-                            val intent = Intent(mContext, DocumentFileChildActivity::class.java)
-                            intent.putExtra("data", data.children.toArrayList())
-                            mContext.startActivity(intent)
-                        }
+
                         delete.setOnClickListener {
                             dialog?.dismissDlg()
-                            /* mContext.delete(Constant.URL_WORK_DOCUMENT_DELETE, "是否删除${data.picture_name}？", "id" to data.id.toString()) {
-                                 NotifyListenerMangager.getInstance().nofityContext("refresh", "DocumentFileActivity")
-                             }*/
                             mContext.delete(Constant.URL_WORK_DOCUMENT_DELETE, "是否删除${data.picture_name}？", "id" to data.id.toString()) {
                                 NotifyListenerMangager.getInstance().nofityContext(data.id.toString(), "DocumentFileChildActivity")
                                 NotifyListenerMangager.getInstance().nofityContext("refresh", "DocumentFileActivity")
@@ -92,9 +94,9 @@ class DocumentFileAdapter(list: MutableList<DocumentFileBean.DataBean>?, layoutI
                         cancel.setOnClickListener {
                             dialog?.dismissDlg()
                         }
+
                     }
                     dialog?.showDlgWithGravity(Gravity.BOTTOM)
-
 
                 }
             }

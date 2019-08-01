@@ -165,7 +165,7 @@ class DocumentFileActivity : BaseNormalActivity(), INotifyListener {
                         // 是否有下一页
                         layout_refresh.isEnableLoadMore = model.totalnumber > pageIndex * pageSize
                         //footer提示
-                        adapter.footerView = if (model.totalnumber > 0 && model.totalnumber < pageIndex * pageSize) footerView else null
+                        adapter.footerView = if (model.totalnumber > 0 && !layout_refresh.isEnableLoadMore) footerView else null
                         if (pageIndex == 1) list.clear()
 
                         list.addAll(model.data)
