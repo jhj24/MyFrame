@@ -130,6 +130,25 @@
                 android:layout_marginBottom="8dp"
                 android:background="@color/line_gray" />
 
+            <TextView
+                android:id="@+id/item_tv_progress_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="编辑"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/line_gray" />
 
             <TextView
                 android:id="@+id/item_tv_progress_delete"
@@ -140,7 +159,7 @@
                 android:gravity="center"
                 android:padding="12dp"
                 android:text="删除"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/bids_4"
                 android:textSize="14sp" />
 
         </LinearLayout>

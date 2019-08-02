@@ -1,6 +1,8 @@
 package com.zgdj.djframe.utils
 
 import android.content.Context
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 
 fun String.getFileName(): String {
     val index = this.lastIndexOf("/")
@@ -32,4 +34,9 @@ fun Context.download(fileName: String, path: String) {
 
 fun Context.delete(path: String, msg: String, vararg params: Pair<String, String>, body: () -> Unit) {
     DownloadUtils.delete(this, path, msg, *params, body = body)
+}
+
+fun Context.closeKeyboard(view: View) {
+    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager;
+    imm.hideSoftInputFromWindow(view.windowToken, 0)
 }

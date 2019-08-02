@@ -1,11 +1,14 @@
 package com.zgdj.djframe.activity.work
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import com.google.gson.Gson
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter
@@ -19,6 +22,7 @@ import com.zgdj.djframe.interf.INotifyListener
 import com.zgdj.djframe.utils.Logger
 import com.zgdj.djframe.utils.NotifyListenerMangager
 import com.zgdj.djframe.utils.ToastUtils
+import com.zgdj.djframe.utils.closeKeyboard
 import com.zgdj.djframe.view.ListViewDialog
 import com.zgdj.djframe.view.LoadingDialog
 import kotlinx.android.synthetic.main.activity_standard_list.*
@@ -39,7 +43,6 @@ class StandardFileActivity : BaseNormalActivity(), INotifyListener {
     private val pageSize = 10  //一页数量
     private var pageIndex = 1  //当前页码
     private var key = -0x00100000
-    private var search = ""
 
 
     override fun initData(bundle: Bundle?) {
@@ -58,11 +61,23 @@ class StandardFileActivity : BaseNormalActivity(), INotifyListener {
         listDialog = ListViewDialog(this)
         list = mutableListOf()
         footerView = View.inflate(this, R.layout.view_recycler_fooder, null)
-        adapter = StandardFileAdapter(list, R.layout.item_recycler_standard)
+        adapter = StandardFileAdapter(list, R.layout.item_recycler_standard, key)
         progress_recycler.adapter = adapter
         progress_recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         NotifyListenerMangager.getInstance().registerListener(this, "StandardFileActivity")
         search()
+        setRightOnclick("添加") {
+            val intent = Intent(this, StandardFileEditActivity::class.java)
+            intent.putExtra("nodeId", key)
+            startActivityForResult(intent, 1000)
+        }
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN
+                or WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
+        progress_recycler.setOnTouchListener { v, event ->
+            closeKeyboard(v)
+            false
+        }
+
     }
 
     private fun search() {
@@ -191,6 +206,13 @@ class StandardFileActivity : BaseNormalActivity(), INotifyListener {
     override fun notifyContext(obj: Any?) {
         if (obj == "refresh") { //刷新列表
             pageIndex = 1
+            getListInfoTask()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK && requestCode == 1000) {
             getListInfoTask()
         }
     }

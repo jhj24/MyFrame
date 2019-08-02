@@ -101,7 +101,7 @@ public class WorkFragment extends BaseFragment {
         setRecycler(recyclerDocument, documentList, 4);
 
         standardList = new ArrayList<>();
-        standardList.add(new WorkBean("工程标准与规范", R.drawable.icon_progress));
+        standardList.add(new WorkBean("标准与规范", R.drawable.icon_progress));
         setRecycler(recyclerStandard, standardList, 5);
 
     }

@@ -129,10 +129,9 @@ public class Constant {
     public static final String URL_WORK_REAL_TIME_PROGRESS_ADD = BASE_URL + "/api/actual/add";//实时进度 - 新增进度
 
     public static final String URL_WORK_STANDARD_TREE = BASE_URL + "/api/Appnorm/normTree";
-
     public static final String URL_WORK_STANDARD_LIST = BASE_URL + "/api/Appnorm/fileList";
-
     public static final String URL_WORK_STANDARD_DELETE = BASE_URL + "/api/Appnorm/normDel";
+    public static final String URL_WORK_STANDARD_ADD = BASE_URL + "/api/Appnorm/addOrEdit";
 
 
     public static final String URL_WORK_DOCUMENT_TREE = BASE_URL + "/api/Appatlas/atlasTree";
@@ -145,6 +144,8 @@ public class Constant {
     public static final String URL_WORK_DOCUMENT_SHARE_GET = BASE_URL + "/api/Appatlas/getAdminname";// 获取白名单
     public static final String URL_WORK_DOCUMENT_SHARE_DEL = BASE_URL + "/api/Appatlas/delAdminname";// 删除白名单
     public static final String URL_WORK_DOCUMENT_PICTURE_ADD = BASE_URL + "/api/Appatlas/addPicture";// 新增图纸
+    public static final String URL_WORK_DOCUMENT_PICTURE_BID = BASE_URL + "/api/Appatlas/getAllcode";// 所有标段
+    public static final String URL_WORK_DOCUMENT_FILE_ADD = BASE_URL + "/api/Appatlas/editAtlasCate";// 新增编辑图册
 
 
     /*************************************  URL  **********************************************/

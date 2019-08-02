@@ -2,9 +2,11 @@ package com.zgdj.djframe.adapter
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
 import android.widget.Button
 import android.widget.TextView
 import com.zgdj.djframe.R
+import com.zgdj.djframe.activity.work.StandardFileEditActivity
 import com.zgdj.djframe.base.rv.BaseViewHolder
 import com.zgdj.djframe.base.rv.adapter.SingleAdapter
 import com.zgdj.djframe.bean.StandardFileBean
@@ -22,7 +24,7 @@ import java.io.File
  * description:实时进度adapter
  * author: Created by Mr.Zhang on 2018/7/23
  */
-class StandardFileAdapter(list: MutableList<StandardFileBean.DataBean>?, layoutId: Int) :
+class StandardFileAdapter(list: MutableList<StandardFileBean.DataBean>?, layoutId: Int, val key: Int) :
         SingleAdapter<StandardFileBean.DataBean>(list, layoutId) {
     private var dialog: CustomerDialog? = null
 
@@ -35,6 +37,7 @@ class StandardFileAdapter(list: MutableList<StandardFileBean.DataBean>?, layoutI
             val date = it.getView<TextView>(R.id.item_tv_progress_date) //日期
             val reMarks = it.getView<TextView>(R.id.item_tv_progress_remarks) //备注
             val see = it.getView<TextView>(R.id.item_tv_progress_see) //查看
+            val edit = it.getView<TextView>(R.id.item_tv_progress_edit)
             val delete = it.getView<TextView>(R.id.item_tv_progress_delete) //删除
             val standard = it.getView<TextView>(R.id.item_tv_standard)
 
@@ -48,8 +51,19 @@ class StandardFileAdapter(list: MutableList<StandardFileBean.DataBean>?, layoutI
                 //操作
                 see.setOnClickListener {
                     //下载
-                    downloadFile(data.path)
+                    if (data.path.isNullOrBlank()) {
+                        mContext.toast("没有文件")
+                    } else {
+                        downloadFile(data.path)
+                    }
                 }
+                edit.setOnClickListener {
+                    val intent = Intent(mContext, StandardFileEditActivity::class.java)
+                    intent.putExtra("nodeId", key)
+                    intent.putExtra("data", data)
+                    (mContext as Activity).startActivityForResult(intent, 1000)
+                }
+
 
                 delete.setOnClickListener {
                     //删除
