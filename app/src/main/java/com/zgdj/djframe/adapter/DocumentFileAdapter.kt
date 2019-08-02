@@ -28,7 +28,7 @@ import org.xutils.x
  * description:实时进度adapter
  * author: Created by Mr.Zhang on 2018/7/23
  */
-class DocumentFileAdapter(list: MutableList<DocumentFileBean.DataBean>?, layoutId: Int) :
+class DocumentFileAdapter(list: MutableList<DocumentFileBean.DataBean>?, layoutId: Int, val key: Int) :
         SingleAdapter<DocumentFileBean.DataBean>(list, layoutId) {
     private var dialog: CustomerDialog? = null
 
@@ -46,6 +46,13 @@ class DocumentFileAdapter(list: MutableList<DocumentFileBean.DataBean>?, layoutI
                 title.text = data.picture_name
                 code.text = data.picture_number
                 time.text = data.create_time
+                it.itemView.setOnClickListener {
+                    val intent = Intent(mContext, DocumentFileEditActivity::class.java)
+                    intent.putExtra("documentId", key)
+                    intent.putExtra("data", data)
+                    intent.putExtra("isRead", true)
+                    (mContext as Activity).startActivityForResult(intent, 1000)
+                }
                 more.setOnClickListener {
                     if (dialog == null) {
                         dialog = CustomerDialog(mContext as Activity, R.layout.dialog_document_file)
@@ -78,8 +85,9 @@ class DocumentFileAdapter(list: MutableList<DocumentFileBean.DataBean>?, layoutI
                         edit.setOnClickListener {
                             dialog?.dismissDlg()
                             val intent = Intent(mContext, DocumentFileEditActivity::class.java)
-                            intent.putExtra("data", data.children.toArrayList())
-                            mContext.startActivity(intent)
+                            intent.putExtra("documentId", key)
+                            intent.putExtra("data", data)
+                            (mContext as Activity).startActivityForResult(intent, 1000)
                         }
                         draw.setOnClickListener {
                             dialog?.dismissDlg()

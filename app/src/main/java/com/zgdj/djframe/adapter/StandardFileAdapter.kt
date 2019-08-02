@@ -99,9 +99,6 @@ class StandardFileAdapter(list: MutableList<StandardFileBean.DataBean>?, layoutI
 
     //下载文件
     private fun downloadFile(url: String) {
-        if (url.isNullOrBlank()) {
-            ToastUtils.showShort("下载路径错误")
-        }
         val loadingDialog = LoadingDialog(mContext)
         loadingDialog.setSpinnerType(0)
         val requestParams = RequestParams(Constant.BASE_URL + url)

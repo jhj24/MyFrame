@@ -168,7 +168,8 @@ public class QualityEvaluationContentDetailActivity extends BaseNormalActivity {
                 detail2Adapter.setOnItemClickListener((view, position) -> {
                     if (!TextUtils.isEmpty(beanList.get(position).getHerf())) {
                         Bundle bundle = new Bundle();
-                        bundle.putString("key_url", beanList.get(position).getHerf());
+                        String baseUrl = beanList.get(position).getHerf();
+                        bundle.putString("key_url", baseUrl + "?cpr_id=" + beanList.get(position).getCpr_id() + "&id=" + beanList.get(position).getData().get(0).getId() + "&currentStep=null&isView=true");
                         jumpToInterface(WebH5Activity.class, bundle);
                     } else {
                         ToastUtils.showShort("链接出错！！！");

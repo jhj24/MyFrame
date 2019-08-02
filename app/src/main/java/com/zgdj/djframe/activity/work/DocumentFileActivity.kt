@@ -1,11 +1,14 @@
 package com.zgdj.djframe.activity.work
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import com.google.gson.Gson
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter
@@ -19,6 +22,7 @@ import com.zgdj.djframe.interf.INotifyListener
 import com.zgdj.djframe.utils.Logger
 import com.zgdj.djframe.utils.NotifyListenerMangager
 import com.zgdj.djframe.utils.ToastUtils
+import com.zgdj.djframe.utils.closeKeyboard
 import com.zgdj.djframe.view.ListViewDialog
 import com.zgdj.djframe.view.LoadingDialog
 import kotlinx.android.synthetic.main.activity_standard_list.*
@@ -57,11 +61,22 @@ class DocumentFileActivity : BaseNormalActivity(), INotifyListener {
         listDialog = ListViewDialog(this)
         list = mutableListOf()
         footerView = View.inflate(this, R.layout.view_recycler_fooder, null)
-        adapter = DocumentFileAdapter(list, R.layout.item_recycler_document_file)
+        adapter = DocumentFileAdapter(list, R.layout.item_recycler_document_file, key)
         progress_recycler.adapter = adapter
         progress_recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         NotifyListenerMangager.getInstance().registerListener(this, "DocumentFileActivity")
         search()
+        setRightOnclick("添加") {
+            val intent = Intent(this, DocumentFileEditActivity::class.java)
+            intent.putExtra("documentId", key)
+            startActivityForResult(intent, 1000)
+        }
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN
+                or WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
+        progress_recycler.setOnTouchListener { v, event ->
+            closeKeyboard(v)
+            false
+        }
     }
 
     private fun search() {
@@ -185,6 +200,14 @@ class DocumentFileActivity : BaseNormalActivity(), INotifyListener {
 
         })
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK && requestCode == 1000) {
+            pageIndex = 1
+            getListInfoTask()
+        }
     }
 
     override fun notifyContext(obj: Any?) {

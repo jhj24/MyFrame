@@ -105,4 +105,5 @@ dependencies {
     //kotlin 支持库
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.github.jhj24:FlowTag:v1.0.0'
+    compile 'com.contrarywind:Android-PickerView:4.1.8'
 }

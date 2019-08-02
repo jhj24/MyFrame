@@ -61,7 +61,7 @@ class DocumentFileChildEditActivity : BaseNormalActivity() {
             }
 
 
-            val name = SPUtils.getInstance().getString(Constant.KEY_USER_NAME)
+            val name = SPUtils.getInstance().getString(Constant.KEY_USER_NICK)
             val nameId = SPUtils.getInstance().getInt(Constant.KEY_USER_ID)
             if (!loadingDialog.isShowing) loadingDialog.show()
             val params = RequestParams(Constant.URL_WORK_DOCUMENT_PICTURE_ADD)

@@ -225,7 +225,13 @@ public class PDFActivity extends BaseNormalActivity implements OnPageChangeListe
                         if (object.has("code")) {
                             if (object.getInt("code") == 1) {//成功
                                 if (object.has("path")) {
-                                    displayFromFile1("http://" + object.getString("path"), fileName);//fileName
+                                    String path = object.getString("path");
+                                    if (!path.startsWith("http://")) {
+                                        displayFromFile1(Constant.BASE_URL + path, fileName);//fileName
+                                    } else {
+                                        displayFromFile1(path, fileName);//fileName
+                                    }
+
                                 }
                             } else if (object.getInt("code") == -2) {
                                 ToastUtils.showShort(Constant.TOKEN_LOST);

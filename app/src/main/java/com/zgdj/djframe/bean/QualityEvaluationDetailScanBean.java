@@ -22,6 +22,16 @@ public class QualityEvaluationDetailScanBean implements Serializable {
     private String herf;
     private List<DataBean> data;
 
+    public int getCpr_id() {
+        return cpr_id;
+    }
+
+    public void setCpr_id(int cpr_id) {
+        this.cpr_id = cpr_id;
+    }
+
+    private int cpr_id;
+
     public int getRecordsTotal() {
         return recordsTotal;
     }

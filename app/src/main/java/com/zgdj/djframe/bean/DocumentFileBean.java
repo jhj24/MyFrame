@@ -87,7 +87,7 @@ public class DocumentFileBean {
         private String owner;
         private String create_time;
         private String filepath;
-        private int fileid;
+        private int file_id;
         private List<DataBean> children;
 
         public int getId() {
@@ -219,11 +219,11 @@ public class DocumentFileBean {
         }
 
         public int getFileid() {
-            return fileid;
+            return file_id;
         }
 
         public void setFileid(int fileid) {
-            this.fileid = fileid;
+            this.file_id = fileid;
         }
 
         public List<DataBean> getChildren() {
@@ -261,7 +261,7 @@ public class DocumentFileBean {
             dest.writeString(this.owner);
             dest.writeString(this.create_time);
             dest.writeString(this.filepath);
-            dest.writeInt(this.fileid);
+            dest.writeInt(this.file_id);
             dest.writeTypedList(this.children);
         }
 
@@ -282,7 +282,7 @@ public class DocumentFileBean {
             this.owner = in.readString();
             this.create_time = in.readString();
             this.filepath = in.readString();
-            this.fileid = in.readInt();
+            this.file_id = in.readInt();
             this.children = in.createTypedArrayList(DataBean.CREATOR);
         }
 

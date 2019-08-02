@@ -31,9 +31,9 @@ public class Constant {
     /*************************************  URL  **********************************************/
 //    public static final String BASE_URL = "http://192.168.1.61:82";//- 胡涛
 //    public static final String BASE_URL = "http://192.168.1.59:82";//- 余晶
-    public static final String BASE_URL = "http://192.168.1.2:81";// - 测试服务器
+//     public static final String BASE_URL = "http://192.168.1.2:81";// - 测试服务器
     //   public static final String BASE_URL = "http://zzbhidi.f3322.net:10081";// -    正式服务器
-//    public static final String BASE_URL = "http://183.196.236.186:1031";// -    现场服务器
+   public static final String BASE_URL = "http://183.196.236.186:1031";// -    现场服务器
 
     public static final String COOKIE_KEY = "Cookie";   //cookie key
 
@@ -112,7 +112,7 @@ public class Constant {
 
     public static final String URL_TRANSFORM_TO_PDF = BASE_URL + "/api/Send/attachmentPreview";//格式转换-PDF
 
-    public static final String URL_MESSAGE_LIST_ITEM_H5 = BASE_URL + "/quality/Qualityform/edit";//消息列表H5页面
+    public static final String URL_MESSAGE_LIST_ITEM_H5 = BASE_URL + "/api/Qualityform/edit";//消息列表H5页面
 
     public static final String URL_QUALITY_EVALUATIOHN_UPLOAD_SINGE_IMG = BASE_URL + "/api/Upload/upload";//质量管控表单图片上传
 
