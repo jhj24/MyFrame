@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import com.zgdj.djframe.R
 import com.zgdj.djframe.base.BaseNormalActivity
+import com.zgdj.djframe.bean.DocumentFileBean
 import com.zgdj.djframe.constant.Constant
 import com.zgdj.djframe.utils.*
 import com.zgdj.djframe.view.LoadingDialog
@@ -16,6 +17,8 @@ import org.xutils.common.Callback
 import org.xutils.http.RequestParams
 import org.xutils.x
 import java.io.File
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class DocumentFileChildEditActivity : BaseNormalActivity() {
@@ -62,7 +65,7 @@ class DocumentFileChildEditActivity : BaseNormalActivity() {
 
 
             val name = SPUtils.getInstance().getString(Constant.KEY_USER_NICK)
-            val nameId = SPUtils.getInstance().getInt(Constant.KEY_USER_ID)
+            val nameId = SPUtils.getInstance().getString(Constant.KEY_USER_ID)
             if (!loadingDialog.isShowing) loadingDialog.show()
             val params = RequestParams(Constant.URL_WORK_DOCUMENT_PICTURE_ADD)
             params.addHeader("id", nameId.toString())
@@ -82,6 +85,16 @@ class DocumentFileChildEditActivity : BaseNormalActivity() {
                     val code = jObject.getInt("code")
                     toast(msg)
                     if (code == 1) {
+                        val sdf = SimpleDateFormat("yyyy-MM", Locale.getDefault())
+                        val intent = Intent()
+                        val data = DocumentFileBean.DataBean()
+                        data.picture_name = et_name.text.toString()
+                        data.picture_number = tv_code.text.toString() + et_code.text.toString()
+                        data.owner = name
+                        data.create_time = sdf.format(Date())
+                        intent.putExtra("data", data)
+                        setResult(Activity.RESULT_OK, intent)
+                        NotifyListenerMangager.getInstance().nofityContext("refresh", "DocumentFileActivity")
                         finish()
                     }
                 }

@@ -1,5 +1,7 @@
 package com.zgdj.djframe.activity.work
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
@@ -41,10 +43,10 @@ class DocumentFileChildActivity : BaseNormalActivity(), INotifyListener {
         recycler_view.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         NotifyListenerMangager.getInstance().registerListener(this, "DocumentFileChildActivity")
         setRightOnclick("添加") {
-            val bundle = Bundle()
-            bundle.putString("code", data?.picture_number)
-            bundle.putInt("id", data?.id ?: -1)
-            jumpToInterface(DocumentFileChildEditActivity::class.java, bundle)
+            val intent = Intent(this, DocumentFileChildEditActivity::class.java)
+            intent.putExtra("code", data?.picture_number)
+            intent.putExtra("id", data?.id ?: -1)
+            startActivityForResult(intent, 1000)
         }
     }
 
@@ -73,6 +75,18 @@ class DocumentFileChildActivity : BaseNormalActivity(), INotifyListener {
             val data = dataList?.find { it.id == obj.toString().toInt() }
             dataList?.remove(data)
             getListInfoTask()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1000 && resultCode == Activity.RESULT_OK) {
+            val bean = data?.getParcelableExtra<DocumentFileBean.DataBean>("data")
+            if (bean != null) {
+                dataList?.add(0, bean)
+                adapter.setData(dataList.toArrayList())
+                adapter.notifyDataSetChanged()
+            }
         }
     }
 }

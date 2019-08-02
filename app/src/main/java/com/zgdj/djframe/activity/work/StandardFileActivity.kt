@@ -213,6 +213,7 @@ class StandardFileActivity : BaseNormalActivity(), INotifyListener {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == 1000) {
+            pageIndex = 1
             getListInfoTask()
         }
     }

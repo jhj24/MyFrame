@@ -10,6 +10,7 @@ import com.zgdj.djframe.R
 import com.zgdj.djframe.activity.work.StandardFileActivity
 import com.zgdj.djframe.base.tree.BaseSingleTreeAdapter
 import com.zgdj.djframe.bean.StandardTreeBean
+import com.zgdj.djframe.utils.toast
 import kotlinx.android.synthetic.main.item_tree_view_leaf.view.*
 
 class StandardTreeAdapter(val mCon: Context) : BaseSingleTreeAdapter<StandardTreeBean, StandardTreeAdapter.ItemViewHolder>() {
@@ -25,9 +26,12 @@ class StandardTreeAdapter(val mCon: Context) : BaseSingleTreeAdapter<StandardTre
             ivNode.rotation = if (data.isShowChildren) 90f else 0f
             val paddingLeft = dp10 + dataList[position].itemLevels * 2 * dp10
             llParent.setPadding(paddingLeft, 0, 0, 0)
+            ivNode.setOnClickListener {
+                itemViewOnClick(data)
+            }
             holder.itemView.setOnClickListener {
                 if (data.isRoot) {
-                    itemViewOnClick(data)
+                    mCon.toast(data.name)
                 } else {
                     val intent = Intent(mCon, StandardFileActivity::class.java)
                     intent.putExtra("standardId", data.id.toInt())

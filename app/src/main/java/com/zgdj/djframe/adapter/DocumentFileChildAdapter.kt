@@ -81,8 +81,12 @@ class DocumentFileChildAdapter(list: MutableList<DocumentFileBean.DataBean>?, la
                             mContext.startActivity(intent)
                         }
                         read.setOnClickListener {
-                            dialog?.dismissDlg()
-                            display(data.filepath, data.fileid)
+                            try {
+                                dialog?.dismissDlg()
+                                display(data.filepath, data.fileid)
+                            } catch (e: Exception) {
+                                e.printStackTrace()
+                            }
                         }
                         delete.setOnClickListener {
                             dialog?.dismissDlg()
