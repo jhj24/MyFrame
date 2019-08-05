@@ -43,6 +43,7 @@ class StandardFileActivity : BaseNormalActivity(), INotifyListener {
     private val pageSize = 10  //一页数量
     private var pageIndex = 1  //当前页码
     private var key = -0x00100000
+    private var search = ""
 
 
     override fun initData(bundle: Bundle?) {
@@ -84,13 +85,17 @@ class StandardFileActivity : BaseNormalActivity(), INotifyListener {
         search_view.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 //完成自己的事件
-                getListInfoTask(search_view.text.toString())
+                pageIndex = 1
+                search = search_view.text.toString()
+                getListInfoTask()
             }
             false
         }
         search_view.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (s.isNullOrBlank()) {
+                    pageIndex = 1
+                    search = ""
                     getListInfoTask()
                 }
             }
@@ -134,7 +139,7 @@ class StandardFileActivity : BaseNormalActivity(), INotifyListener {
     }
 
 
-    private fun getListInfoTask(search: String = "") {
+    private fun getListInfoTask() {
         if (!loadingDialog.isShowing) loadingDialog.show()
         val params = RequestParams(Constant.URL_WORK_STANDARD_LIST)
         params.addHeader("token", token)

@@ -39,7 +39,7 @@ object DownloadUtils {
 
             override fun onError(ex: Throwable, isOnCallback: Boolean) {
                 ex.printStackTrace()
-                ToastUtils.showShort("下载失败，请检查网络和SD卡！")
+                ToastUtils.showShort("下载失败！")
             }
 
             override fun onCancelled(cex: Callback.CancelledException) {}

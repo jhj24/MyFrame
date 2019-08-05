@@ -56,6 +56,7 @@ public class ModelRealActivity extends BaseNormalActivity {
         list0.add(new ModelRealBean.ChildrenBean("2017/8/1", "0.5", "https://map.bhidi.com/model/2017/lanshaba0801/APP", R.drawable.ic_model_2));
         list0.add(new ModelRealBean.ChildrenBean("2018/4/1", "0.5", "https://map.bhidi.com/model/2017/lanshaba0801/APP", R.drawable.ic_model_3));
         list0.add(new ModelRealBean.ChildrenBean("2018/6/15", "", "https://map.bhidi.com/model/2018/lanshaba-180615/App", R.drawable.ic_model_4));
+        list0.add(new ModelRealBean.ChildrenBean("2018/9/28", "", "https://map.bhidi.com/model/2018/lanshaba-20180928/App/#%2F", R.drawable.ic_model_5));
         bean.setList(list0);
         // 业主营地
         ModelRealBean bean1 = new ModelRealBean();
@@ -65,6 +66,8 @@ public class ModelRealActivity extends BaseNormalActivity {
         list1.add(new ModelRealBean.ChildrenBean("2017/8/3", "0.2", "https://map.bhidi.com/model/2017/yezhuyingdi0803/APP", R.drawable.ic_model_22));
         list1.add(new ModelRealBean.ChildrenBean("2018/4/16", "0.4", "https://map.bhidi.com/model/2018/shangshuiku0416/app/#%2F", R.drawable.ic_model_23));
         list1.add(new ModelRealBean.ChildrenBean("2018/6/5", "", "https://map.bhidi.com/model/2018/yezhuyingdi-180605/APP", R.drawable.ic_model_24));
+        list1.add(new ModelRealBean.ChildrenBean("2018/9/3", "", "https://map.bhidi.com/model/2018/yezhuyingdi-20180903/App/#%2F", R.drawable.ic_model_25));
+        list1.add(new ModelRealBean.ChildrenBean("2018/10/14", "", "https://map.bhidi.com/model/2018/yezhuyingdi-20181014/App/#%2F", R.drawable.ic_model_26));
         bean1.setList(list1);
         // 拦河坝
         ModelRealBean bean2 = new ModelRealBean();
@@ -73,6 +76,7 @@ public class ModelRealActivity extends BaseNormalActivity {
         list2.add(new ModelRealBean.ChildrenBean("2017/8/9", "0.2", "https://map.bhidi.com/model/2017/lanshaba0801/APP", R.drawable.ic_model_31));
         list2.add(new ModelRealBean.ChildrenBean("2018/4/9", "0.2", "https://map.bhidi.com/model/2018/tiaoyajing0409/app/#%2F", R.drawable.ic_model_32));
         list2.add(new ModelRealBean.ChildrenBean("2018/6/12", "", "https://map.bhidi.com/model/2018/lanheba-180612/App", R.drawable.ic_model_33));
+        list2.add(new ModelRealBean.ChildrenBean("2018/9/28", "", "https://map.bhidi.com/model/2018/lanheba-20180928/App/#%2F", R.drawable.ic_model_34));
         bean2.setList(list2);
 
         // 下水库进出水口
@@ -82,6 +86,7 @@ public class ModelRealActivity extends BaseNormalActivity {
         list3.add(new ModelRealBean.ChildrenBean("2017/4/15", "0.2", "https://map.bhidi.com/model/2017/xskjcsk0415/APP", R.drawable.ic_model_41));
         list3.add(new ModelRealBean.ChildrenBean("2018/4/2", "0.2", "https://map.bhidi.com/model/2018/xiashuikujinchushuikou0402/app/#%2F", R.drawable.ic_model_42));
         list3.add(new ModelRealBean.ChildrenBean("2018/6/6", "", "https://map.bhidi.com/model/2018/xiashuikujinchushuikou-180606/App", R.drawable.ic_model_43));
+        list3.add(new ModelRealBean.ChildrenBean("2018/10/18", "", "https://map.bhidi.com/model/2018/xiashuiku20181018/App/#%2F", R.drawable.ic_model_44));
         bean3.setList(list3);
 
         // 开关站
@@ -92,6 +97,7 @@ public class ModelRealActivity extends BaseNormalActivity {
         list4.add(new ModelRealBean.ChildrenBean("2017/8/9", "0.1", "https://map.bhidi.com/model/2017/kaiguanzhan0809/APP/#%2F", R.drawable.ic_model_52));
         list4.add(new ModelRealBean.ChildrenBean("2018/4/12", "0.1", "https://map.bhidi.com/model/2018/lanshaba0412/app/#%2F", R.drawable.ic_model_53));
         list4.add(new ModelRealBean.ChildrenBean("2018/6/21", "", "https://map.bhidi.com/model/2018/kaiguanzhan-180621/App", R.drawable.ic_model_54));
+        list4.add(new ModelRealBean.ChildrenBean("2018/10/8", "", "https://map.bhidi.com/model/2018/kaiguanzhan-20181008/App/#%2F", R.drawable.ic_model_55));
         bean4.setList(list4);
 
         // 调压井平台
@@ -110,20 +116,22 @@ public class ModelRealActivity extends BaseNormalActivity {
         List<ModelRealBean.ChildrenBean> list6 = new ArrayList<>();
         list6.add(new ModelRealBean.ChildrenBean("2017/4/16", "0.2", "https://map.bhidi.com/model/2017/sskdb0416/APP", R.drawable.ic_model_71));
         list6.add(new ModelRealBean.ChildrenBean("2017/8/10", "0.2", "https://map.bhidi.com/model/2017/tiaoyajing0809/APP", R.drawable.ic_model_72));
+        list6.add(new ModelRealBean.ChildrenBean("2017/11/9", "", "https://map.bhidi.com/model/2017/shangshuiku1109/APP/#%2F", R.drawable.ic_model_73));
         bean6.setList(list6);
         // 上水库进出水口
         ModelRealBean bean7 = new ModelRealBean();
         bean7.setTitle("上水库进出水口");
         List<ModelRealBean.ChildrenBean> list7 = new ArrayList<>();
         list7.add(new ModelRealBean.ChildrenBean("2017/4/16", "0.2", "https://map.bhidi.com/model/2017/sskjcsk0416/APP", R.drawable.ic_model_81));
+        list7.add(new ModelRealBean.ChildrenBean("2017/11/9", "", "https://map.bhidi.com/model/2017/shangshuiku1109/APP/#%2F", R.drawable.ic_model_82));
         bean7.setList(list7);
 
         // 上库大坝及进出水口
         ModelRealBean bean8 = new ModelRealBean();
         bean8.setTitle("上库大坝及进出水口");
         List<ModelRealBean.ChildrenBean> list8 = new ArrayList<>();
-        list8.add(new ModelRealBean.ChildrenBean("2017/11/9", "0.2", "https://map.bhidi.com/model/2017/shangshuiku1109/APP/#%2F", R.drawable.ic_model_91));
-        list8.add(new ModelRealBean.ChildrenBean("2018/4/11", "0.5", "https://map.bhidi.com/model/2018/kaiguanzhan0411/app/#%2F", R.drawable.ic_model_92));
+        list8.add(new ModelRealBean.ChildrenBean("2018/4/16", "", "https://map.bhidi.com/model/2018/shangshuiku0416/app/#%2F", R.drawable.ic_model_94));
+        list8.add(new ModelRealBean.ChildrenBean("2018/5/9", "", "https://map.bhidi.com/model/2018/shangshuiku-180509/3MX/APP", R.drawable.ic_model_95));
         list8.add(new ModelRealBean.ChildrenBean("2018/6/24", "", "https://map.bhidi.com/model/2018/shangshuiku-180624/App", R.drawable.ic_model_93));
         bean8.setList(list8);
 

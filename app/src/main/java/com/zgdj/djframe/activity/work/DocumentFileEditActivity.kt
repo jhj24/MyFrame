@@ -60,7 +60,7 @@ class DocumentFileEditActivity : BaseNormalActivity() {
         documentFileBean?.let {
             if (isRead) {
                 read(it)
-            }else{
+            } else {
                 et_name.setText(it.picture_name)
                 et_code.setText(it.picture_number)
                 et_number.setText(it.picture_number)
@@ -108,6 +108,7 @@ class DocumentFileEditActivity : BaseNormalActivity() {
         spinner_type.visibility = View.GONE
         tv_type.visibility = View.VISIBLE
         tv_bid.visibility = View.VISIBLE
+        btn_commit.visibility = View.GONE
 
 
     }
