@@ -10,13 +10,53 @@
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:background="@color/line_gray" />
+
+    <LinearLayout
+        android:id="@+id/layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <com.zgdj.djframe.view.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/img_home_message"
+            android:layout_toRightOf="@+id/line_home_search"
+            android:background="@drawable/search_bg"
+            android:drawableLeft="@drawable/v1_e_search"
+            android:drawableRight="@drawable/v1_delete"
+            android:drawablePadding="5dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical|left"
+            android:hint="搜索"
+            android:imeOptions="actionSearch"
+            android:maxLines="1"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textColor="#1c2627"
+            android:textColorHint="#a1a2a4"
+            android:textCursorDrawable="@drawable/edit_cursor_style_black"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_gray" />
     <!-- 列表 -->
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/layout_evaluation_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        android:layout_marginTop="6dp">
+        android:layout_marginTop="6dp"
+        android:visibility="gone">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_evaluation"

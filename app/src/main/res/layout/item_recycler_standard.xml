@@ -23,6 +23,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="6dp"
             android:layout_marginRight="16dp"
+            android:layout_toLeftOf="@id/iv_more"
             android:ellipsize="end"
             android:maxLines="1"
             android:text=""
@@ -37,6 +38,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="14dp"
             android:layout_marginRight="16dp"
+            android:layout_toLeftOf="@id/iv_more"
             android:orientation="horizontal">
 
             <TextView
@@ -64,12 +66,13 @@
 
         <TextView
             android:id="@+id/item_tv_standard"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_message_second_layout"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@id/iv_more"
             android:ellipsize="end"
             android:maxLines="2"
             android:text="标准："
@@ -78,13 +81,14 @@
 
         <TextView
             android:id="@+id/item_tv_progress_remarks"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_tv_standard"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="6dp"
             android:layout_marginBottom="6dp"
+            android:layout_toLeftOf="@id/iv_more"
             android:ellipsize="end"
             android:maxLines="2"
             android:text="备注："

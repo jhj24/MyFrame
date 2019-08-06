@@ -8,16 +8,23 @@ import android.view.View
 import android.view.ViewGroup
 import com.zgdj.djframe.R
 import com.zgdj.djframe.activity.work.StandardFileActivity
+import com.zgdj.djframe.activity.work.StandardTreeActivity
 import com.zgdj.djframe.base.tree.BaseSingleTreeAdapter
 import com.zgdj.djframe.bean.StandardTreeBean
 import com.zgdj.djframe.utils.toast
+import kotlinx.android.synthetic.main.activity_standard_tree.*
 import kotlinx.android.synthetic.main.item_tree_view_leaf.view.*
 
 class StandardTreeAdapter(val mCon: Context) : BaseSingleTreeAdapter<StandardTreeBean, StandardTreeAdapter.ItemViewHolder>() {
+    private var standardId: Int = 1
     override val context: Context
         get() = mCon
     override val reminder: String
         get() = ""
+
+    fun setStandardId(id: Int) {
+        this.standardId = id
+    }
 
     override fun onBindItemHolder(holder: ItemViewHolder, data: StandardTreeBean, position: Int) {
         val dp10 = (context.resources.displayMetrics.density * 10).toInt()
@@ -32,6 +39,8 @@ class StandardTreeAdapter(val mCon: Context) : BaseSingleTreeAdapter<StandardTre
             holder.itemView.setOnClickListener {
                 if (data.isRoot) {
                     mCon.toast(data.name)
+                    standardId = data.id.toInt()
+                    (mCon as StandardTreeActivity).search_view.hint = "搜索${data.name}"
                 } else {
                     val intent = Intent(mCon, StandardFileActivity::class.java)
                     intent.putExtra("standardId", data.id.toInt())
@@ -50,6 +59,12 @@ class StandardTreeAdapter(val mCon: Context) : BaseSingleTreeAdapter<StandardTre
         }
     }
 
+    fun search(search: String) {
+        val intent = Intent(mCon, StandardFileActivity::class.java)
+        intent.putExtra("standardId", standardId)
+        intent.putExtra("search", search)
+        mCon.startActivity(intent)
+    }
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }

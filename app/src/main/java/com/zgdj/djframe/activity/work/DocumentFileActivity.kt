@@ -48,6 +48,7 @@ class DocumentFileActivity : BaseNormalActivity(), INotifyListener {
 
     override fun initData(bundle: Bundle?) {
         key = bundle?.getInt("documentId", key) ?: key
+        search = bundle?.getString("search") ?: ""
         if (key == -0x00100000) {
             throw IllegalArgumentException("传参错误")
         }
