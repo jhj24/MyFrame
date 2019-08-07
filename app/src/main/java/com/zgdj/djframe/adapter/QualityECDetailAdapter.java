@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.zgdj.djframe.R;
-import com.zgdj.djframe.activity.other.PDFActivity;
+import com.zgdj.djframe.activity.other.PDFViewerActivity;
 import com.zgdj.djframe.activity.other.PhotoViewActivity;
 import com.zgdj.djframe.base.rv.BaseViewHolder;
 import com.zgdj.djframe.base.rv.adapter.SingleAdapter;
@@ -108,9 +108,8 @@ public class QualityECDetailAdapter extends SingleAdapter<QualityEvaluationDetai
                     mContext.startActivity(new Intent(mContext, PhotoViewActivity.class).putExtras(bundle));
                 } else if (data.getFileext().equals("pdf") || data.getFileext().equals("xls") ||
                         data.getFileext().equals("docx") || data.getFileext().equals("doc")) {
-                    Intent intent = new Intent(mContext, PDFActivity.class);
+                    Intent intent = new Intent(mContext, PDFViewerActivity.class);
                     intent.putExtra("key_url", imgURL);
-                    intent.putExtra("file_type", data.getFileext());
                     intent.putExtra("file_name", data.getName());
                     intent.putExtra("file_id", data.getId() + "");
                     mContext.startActivity(intent);

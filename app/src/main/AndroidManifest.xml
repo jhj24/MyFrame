@@ -116,7 +116,6 @@
         <!-- Main 页面 -->
         <activity android:name=".MainActivity" />
         <activity android:name=".activity.message.MessageDetailsActivity" />
-        <activity android:name=".activity.other.PDFActivity" />
         <activity android:name=".activity.other.Test1Activity" />
         <activity android:name=".activity.other.RecyclerViewActivity" />
         <activity android:name=".activity.other.MapActivity" />
@@ -156,6 +155,7 @@
         <activity android:name=".activity.work.StandardTreeActivity" />
         <activity android:name=".activity.work.StandardFileActivity" />
         <activity android:name=".activity.work.StandardFileEditActivity" />
+        <activity android:name=".activity.other.PDFViewerActivity" />
 
         <!-- 推送 相关  start -->
         <!-- Required SDK核心功能 -->

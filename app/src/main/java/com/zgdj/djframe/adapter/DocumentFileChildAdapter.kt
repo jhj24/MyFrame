@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.google.gson.Gson
 import com.zgdj.djframe.R
-import com.zgdj.djframe.activity.other.PDFActivity
+import com.zgdj.djframe.activity.other.PDFViewerActivity
 import com.zgdj.djframe.activity.other.PhotoViewActivity
 import com.zgdj.djframe.activity.work.DocumentDownloadHistoryListActivity
 import com.zgdj.djframe.activity.work.DocumentShareActivity
@@ -117,9 +117,8 @@ class DocumentFileChildAdapter(list: MutableList<DocumentFileBean.DataBean>?, la
             bundle.putInt(PhotoViewActivity.KEY_IMAGE_POSITION, 0)
             mContext.startActivity(Intent(mContext, PhotoViewActivity::class.java).putExtras(bundle))
         } else if (suffix == "pdf" || suffix == "xls" || suffix == "docx" || suffix == "doc") {
-            val intent = Intent(mContext, PDFActivity::class.java)
+            val intent = Intent(mContext, PDFViewerActivity::class.java)
             intent.putExtra("key_url", Constant.BASE_URL + path)
-            intent.putExtra("file_type", suffix)
             intent.putExtra("file_name", path.getFileName())
             intent.putExtra("file_id", id.toString())
             intent.putExtra("is_download", false)
