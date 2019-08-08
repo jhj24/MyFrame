@@ -73,7 +73,7 @@ class MessageApproval2Activity : BaseNormalActivity() {
         approval2_btn_refuse.setOnClickListener { approvalTask("-1") }
         //通过
         approval2_btn_ok.setOnClickListener {
-            approvalTask("2")
+            approvalTask("1")
         }
 
     }
@@ -83,7 +83,7 @@ class MessageApproval2Activity : BaseNormalActivity() {
 
     //审批请求 code:审批状态：0新建，1审批中，2已审批，-1被退回，-2作废
     private fun approvalTask(code: String) {
-        if (code == "2" && executorId.isNullOrEmpty()) {
+        if (code == "1" && executorId.isNullOrEmpty()) {
             ToastUtils.showShort("请选择执行人")
             return
         }
@@ -113,6 +113,7 @@ class MessageApproval2Activity : BaseNormalActivity() {
                             "-1" -> "3"
                             else -> ""
                         })
+                        finish()
 
                     } else if (json.getInt("code") == -2) {
                         ToastUtils.showShort(Constant.TOKEN_LOST)

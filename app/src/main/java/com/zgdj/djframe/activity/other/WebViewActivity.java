@@ -3,6 +3,7 @@ package com.zgdj.djframe.activity.other;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -25,10 +26,12 @@ public class WebViewActivity extends BaseActivity {
     private String url;
     private WebSettings mWebSettings;
     private LoadingDialog loadingDialog;
+    private String type;
 
     @Override
     public void initData(Bundle bundle) {
         url = bundle.getString("key_url");
+        type = bundle.getString("type");
     }
 
     @Override
@@ -56,6 +59,13 @@ public class WebViewActivity extends BaseActivity {
         mWebSettings.setJavaScriptEnabled(true);
         mWebSettings.setDomStorageEnabled(true); // 开启 DOM storage API 功能
         webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);//开启硬件加速
+        webView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                return event.getAction() == MotionEvent.ACTION_UP;
+            }
+        });
 
         /*// 特别注意
         // 每个 Application 只调用一次 WebSettings.setAppCachePath() 和   WebSettings.setAppCacheMaxSize()

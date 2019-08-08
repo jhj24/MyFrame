@@ -38,7 +38,7 @@ public class ModelAllActivity extends BaseNormalActivity {
     @Override
     public void doBusiness() {
         setTitle("全景模型");
-        adapter = new ModelRealAdapter(getData(), R.layout.item_recycler_model_real);
+        adapter = new ModelRealAdapter(getData(), R.layout.item_recycler_model_real, "");
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.scrollToPosition(0);

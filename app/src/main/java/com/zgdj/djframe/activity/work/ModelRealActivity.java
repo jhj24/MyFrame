@@ -40,7 +40,7 @@ public class ModelRealActivity extends BaseNormalActivity {
     @Override
     public void doBusiness() {
         setTitle("实景模型");
-        adapter = new ModelRealAdapter(getData(), R.layout.item_recycler_model_real);
+        adapter = new ModelRealAdapter(getData(), R.layout.item_recycler_model_real, "real");
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

@@ -1,6 +1,7 @@
 package com.zgdj.djframe.adapter;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
@@ -20,8 +21,11 @@ import java.util.List;
  */
 public class ModelRealAdapter extends SingleAdapter<ModelRealBean> {
 
-    public ModelRealAdapter(List<ModelRealBean> list, int layoutId) {
+    private String type;
+
+    public ModelRealAdapter(List<ModelRealBean> list, int layoutId, String type) {
         super(list, layoutId);
+        this.type = type;
     }
 
     @Override
@@ -35,9 +39,21 @@ public class ModelRealAdapter extends SingleAdapter<ModelRealBean> {
         recyclerView.setAdapter(childrenAdapter);
         recyclerView.setNestedScrollingEnabled(false);
         childrenAdapter.setOnItemClickListener((view, position) -> {
-            Intent intent = new Intent(mContext, WebViewActivity.class);
-            intent.putExtra("key_url", data.getList().get(position).getUrl());
-            mContext.startActivity(intent);
+            if (!type.equals("real")){
+                Intent intent = new Intent(mContext, WebViewActivity.class);
+                intent.putExtra("key_url", data.getList().get(position).getUrl());
+                intent.putExtra("type", type);
+                mContext.startActivity(intent);
+            }else {
+                Uri uri = Uri.parse(data.getList().get(position).getUrl());
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(uri);
+                mContext.startActivity(intent);
+            }
+
+
+           /* ;*/
         });
 
     }

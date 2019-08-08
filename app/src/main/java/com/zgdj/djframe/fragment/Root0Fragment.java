@@ -699,7 +699,7 @@ public class Root0Fragment extends BaseFragment implements FragmentUtils.OnBackC
         listViewDialog.setCallBack((position, code) -> {
             if (code == 30) {
                 spinner.setText(chartMonthList.get(position).replace("-", "年") + "月");//选择时间
-                barChartTitle.setText(chartMonthList.get(0).replace("-", "年")
+                barChartTitle.setText(chartMonthList.get(position).replace("-", "年")
                         + "月单元工程质量验收情况统计");
                 getBarAndTableInfoTask(chartMonthDesList.get(position), view);
             }

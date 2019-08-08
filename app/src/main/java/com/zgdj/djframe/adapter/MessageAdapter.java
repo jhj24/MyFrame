@@ -84,13 +84,13 @@ public class MessageAdapter extends SingleAdapter<MessageListBean.PageArrayBean>
                 see.setVisibility(View.GONE);
                 line1.setVisibility(View.GONE);
                 line2.setVisibility(View.GONE);
-            } else if (messageType.equals("2")) {
+            } /*else if (messageType.equals("2")) {
                 //隐藏 - 历史
                 history.setVisibility(View.GONE);
                 see.setVisibility(View.VISIBLE);
                 line1.setVisibility(View.GONE);
                 line2.setVisibility(View.VISIBLE);
-            } else if (messageType.equals("3")) {
+            } */else if (messageType.equals("3") || messageType.equals("2")) {
                 //都有
                 history.setVisibility(View.VISIBLE);
                 see.setVisibility(View.VISIBLE);

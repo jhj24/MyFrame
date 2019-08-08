@@ -97,11 +97,11 @@ public class WorkFragment extends BaseFragment {
 
 
         documentList = new ArrayList<>();
-        documentList.add(new WorkBean("图册管理", R.drawable.ic_model_real));
+        documentList.add(new WorkBean("图册管理", R.drawable.ic_model_document));
         setRecycler(recyclerDocument, documentList, 4);
 
         standardList = new ArrayList<>();
-        standardList.add(new WorkBean("标准与规范", R.drawable.ic_model_all));
+        standardList.add(new WorkBean("标准与规范", R.drawable.ic_model_standard));
         setRecycler(recyclerStandard, standardList, 5);
 
     }

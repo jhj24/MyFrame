@@ -139,7 +139,7 @@ public class ScrollerNumberPicker extends View {
 	protected void onDraw(Canvas canvas) {
 		// TODO Auto-generated method stub
 		super.onDraw(canvas);
-
+		controlWidth = getWidth();
 		drawLine(canvas);
 		drawList(canvas);
 		drawMask(canvas);
@@ -169,11 +169,11 @@ public class ScrollerNumberPicker extends View {
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		// TODO Auto-generated method stub
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-		controlWidth = getWidth();
+	/*	controlWidth = getWidth();
 		if (controlWidth != 0) {
 			setMeasuredDimension(getWidth(), itemNumber * unitHeight);
 			controlWidth = getWidth();
-		}
+		}*/
 
 	}
 
