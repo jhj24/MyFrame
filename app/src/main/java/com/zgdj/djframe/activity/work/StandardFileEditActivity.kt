@@ -65,7 +65,7 @@ class StandardFileEditActivity : BaseNormalActivity() {
                 toast("请输入标准编号")
                 return@setOnClickListener
             } else if (tv_time.text.isNullOrBlank()) {
-                toast("请选择实时日期")
+                toast("请选择实施日期")
                 return@setOnClickListener
             }
 

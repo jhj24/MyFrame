@@ -82,7 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="实时日期："
+                android:text="实施日期："
                 android:textColor="@color/middle_black"
                 android:textSize="16sp" />
 
@@ -142,7 +142,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="15dp"
                 android:gravity="top"
-                android:text="备        注："
+                android:text="备      注："
                 android:textColor="@color/middle_black"
                 android:textSize="16sp" />
 

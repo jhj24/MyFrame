@@ -81,6 +81,7 @@ public class ModelAllActivity extends BaseNormalActivity {
         list8.add(new ModelRealBean.ChildrenBean("2018年8月", "", "https://720yun.com/t/6lgjrgze39tnydm6sj", R.drawable.ic_model_all_2_808));
         list8.add(new ModelRealBean.ChildrenBean("2019年4月", "", "https://720yun.com/t/9ejlyqaeojh9jz4df8", R.drawable.ic_model_all_2_904));
         list8.add(new ModelRealBean.ChildrenBean("2019年6月", "", "https://720yun.com/t/pz2z2x6joahlqyzmij", R.drawable.ic_model_all_2_906));
+        list8.add(new ModelRealBean.ChildrenBean("2019年7月", "", "https://720yun.com/t/mzpqnjgjqe0pmne6sd", R.drawable.ic_model_all_2_907));
         bean8.setList(list8);
 
         // 调压井平台
@@ -94,7 +95,8 @@ public class ModelAllActivity extends BaseNormalActivity {
         list5.add(new ModelRealBean.ChildrenBean("2018年5月", "", "http://720yun.com/t/2dwpddop42cawy64ux", R.drawable.ic_model_all_3_805));
         list5.add(new ModelRealBean.ChildrenBean("2018年6月", "", "https://720yun.com/t/z4pqzww4wyc578w9hr", R.drawable.ic_model_all_3_806));
         list5.add(new ModelRealBean.ChildrenBean("2018年8月", "", "https://720yun.com/t/x7gonoze59frqlwzh3", R.drawable.ic_model_all_3_808));
-        list5.add(new ModelRealBean.ChildrenBean("2019年7月", "", "https://720yun.com/t/3nrmap9d9x0o9j2wtg", R.drawable.ic_model_all_3_907));
+        list5.add(new ModelRealBean.ChildrenBean("2019年6月", "", "https://720yun.com/t/3nrmap9d9x0o9j2wtg", R.drawable.ic_model_all_3_906));
+        list5.add(new ModelRealBean.ChildrenBean("2019年7月", "", "https://720yun.com/t/gy8gpol5goizwa8jf9", R.drawable.ic_model_all_3_907));
         bean5.setList(list5);
 
         // 下水库进出水口
@@ -111,6 +113,7 @@ public class ModelAllActivity extends BaseNormalActivity {
         list3.add(new ModelRealBean.ChildrenBean("2018年10月", "", "https://720yun.com/t/gazogooderc5342zs9", R.drawable.ic_model_all_4_8010));
         list3.add(new ModelRealBean.ChildrenBean("2019年4月", "", "https://720yun.com/t/9ejlydq55zu9jz4df8", R.drawable.ic_model_all_4_904));
         list3.add(new ModelRealBean.ChildrenBean("2019年6月", "", "https://720yun.com/t/9ew3we6rdzh9jz4df8", R.drawable.ic_model_all_4_906));
+        list3.add(new ModelRealBean.ChildrenBean("2019年7月", "", "https://720yun.com/t/rzxeqynoqju9q5r4fw", R.drawable.ic_model_all_4_907));
         bean3.setList(list3);
 
         // 拦砂坝
@@ -127,6 +130,7 @@ public class ModelAllActivity extends BaseNormalActivity {
         list0.add(new ModelRealBean.ChildrenBean("2018年9月", "", "https://720yun.com/t/z4rqm97qw4c5w4qmsr", R.drawable.ic_model_all_5_809));
         list0.add(new ModelRealBean.ChildrenBean("2019年5月", "", "https://720yun.com/t/ayjewwq68qh6nm8yhj", R.drawable.ic_model_all_5_905));
         list0.add(new ModelRealBean.ChildrenBean("2019年6月", "", "https://720yun.com/t/43ydmg2ge4s4g5ja1w", R.drawable.ic_model_all_5_906));
+        list0.add(new ModelRealBean.ChildrenBean("2019年7月", "", "https://720yun.com/t/ly9j724w7z12lmwp16", R.drawable.ic_model_all_5_907));
         bean.setList(list0);
 
         // 拦河坝
@@ -141,6 +145,7 @@ public class ModelAllActivity extends BaseNormalActivity {
         list2.add(new ModelRealBean.ChildrenBean("2018年8月", "", "https://720yun.com/t/dq3y6xx9qwf38q62uq", R.drawable.ic_model_all_6_808));
         list2.add(new ModelRealBean.ChildrenBean("2018年9月", "", "https://720yun.com/t/6lm5489oaz0nydm6sj", R.drawable.ic_model_all_6_809));
         list2.add(new ModelRealBean.ChildrenBean("2019年6月", "", "https://720yun.com/t/ly9yp9ae5au2lmwp16", R.drawable.ic_model_all_6_906));
+        list2.add(new ModelRealBean.ChildrenBean("2019年7月", "", "https://720yun.com/t/2gp2r4o9xyc9jwqefx", R.drawable.ic_model_all_6_907));
         bean2.setList(list2);
 
 
@@ -155,6 +160,7 @@ public class ModelAllActivity extends BaseNormalActivity {
         list4.add(new ModelRealBean.ChildrenBean("2018年6月", "", "https://720yun.com/t/jlg399alw3tn3z26uy", R.drawable.ic_model_all_7_806));
         list4.add(new ModelRealBean.ChildrenBean("2018年8月", "", "https://720yun.com/t/qqorzwpwp7hjr6wph9", R.drawable.ic_model_all_7_808));
         list4.add(new ModelRealBean.ChildrenBean("2019年6月", "", "https://720yun.com/t/zzl5lm3zrdsmx7johr", R.drawable.ic_model_all_7_906));
+        list4.add(new ModelRealBean.ChildrenBean("2019年7月", "", "https://720yun.com/t/nzqda9wzw3seqnrm1a", R.drawable.ic_model_all_7_907));
         bean4.setList(list4);
 
         list.add(bean1);
