@@ -638,7 +638,8 @@ public class Root0Fragment extends BaseFragment implements FragmentUtils.OnBackC
                 ContextCompat.getDrawable(getActivity(), R.drawable.shape_dot_yellow),
                 ContextCompat.getDrawable(getActivity(), R.drawable.shape_dot_red),
                 ContextCompat.getDrawable(getActivity(), R.drawable.shape_dot_blue),
-                ContextCompat.getDrawable(getActivity(), R.drawable.shape_dot_red)};
+                ContextCompat.getDrawable(getActivity(), R.drawable.shape_dot_rainbow_red),
+                ContextCompat.getDrawable(getActivity(), R.drawable.shape_dot_rainbow_green)};
 
         layoutChartType.removeAllViews();//清空下view
         for (int i = 0; i < titles.size(); i++) {

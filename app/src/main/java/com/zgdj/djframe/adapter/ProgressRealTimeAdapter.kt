@@ -2,11 +2,14 @@ package com.zgdj.djframe.adapter
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
 import android.widget.Button
 import android.widget.TextView
 import com.zgdj.djframe.R
+import com.zgdj.djframe.activity.other.PhotoViewActivity
 import com.zgdj.djframe.base.rv.BaseViewHolder
 import com.zgdj.djframe.base.rv.adapter.SingleAdapter
+import com.zgdj.djframe.bean.ImageBean
 import com.zgdj.djframe.constant.Constant
 import com.zgdj.djframe.model.ProgressListModel
 import com.zgdj.djframe.utils.NotifyListenerMangager
@@ -18,6 +21,7 @@ import org.json.JSONObject
 import org.xutils.common.Callback
 import org.xutils.http.RequestParams
 import org.xutils.x
+import java.io.Serializable
 
 /**
  * description:实时进度adapter
@@ -44,7 +48,15 @@ class ProgressRealTimeAdapter(list: MutableList<ProgressListModel.DataBean>?, la
         reMarks.text = "备注：${data.remark}"
         //操作
         see.setOnClickListener {
-            if (data.path.isNotEmpty()) Utils.jumpPictureForView(mContext, data.path)
+            if (data.path == null || data.path.size == 0) {
+                ToastUtils.showShort("图片为空")
+            } else {
+                val imageList = data.path.map { ImageBean(Utils.tranFormURL(it.filepath), 2) }
+                val intent = Intent(mContext, PhotoViewActivity::class.java)
+                intent.putExtra(PhotoViewActivity.KEY_IMAGE_POSITION, 0)
+                intent.putExtra(PhotoViewActivity.KEY_IMAGE_LIST, imageList as Serializable)
+                mContext.startActivity(intent)
+            }
         }
 
         delete.setOnClickListener {

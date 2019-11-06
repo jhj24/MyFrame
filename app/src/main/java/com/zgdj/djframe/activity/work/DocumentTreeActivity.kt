@@ -16,6 +16,7 @@ import com.zgdj.djframe.constant.Constant
 import com.zgdj.djframe.utils.Logger
 import com.zgdj.djframe.utils.ToastUtils
 import com.zgdj.djframe.utils.closeKeyboard
+import com.zgdj.djframe.view.LoadingDialog
 import kotlinx.android.synthetic.main.activity_standard_tree.*
 import org.json.JSONException
 import org.xutils.common.Callback
@@ -24,6 +25,7 @@ import org.xutils.x
 import java.util.*
 
 class DocumentTreeActivity : BaseNormalActivity() {
+    private lateinit var loadingDialog: LoadingDialog
     private var adapter: DocumentTreeAdapter? = null
 
     override fun initData(bundle: Bundle?) {
@@ -35,6 +37,8 @@ class DocumentTreeActivity : BaseNormalActivity() {
     }
 
     override fun initView(savedInstanceState: Bundle?, view: View?) {
+        loadingDialog = LoadingDialog(this)
+        loadingDialog.setMessage("加载中...")
         recycler_evaluation.layoutManager = LinearLayoutManager(this)
         //recycler_evaluation.adapter = mTreeAdapter
         layout_evaluation_refresh.isEnableLoadMore = false;
@@ -61,7 +65,7 @@ class DocumentTreeActivity : BaseNormalActivity() {
     }
 
     override fun doBusiness() {
-
+        if (!loadingDialog.isShowing) loadingDialog.show()
         recycler_evaluation.adapter = adapter
         val params = RequestParams(Constant.URL_WORK_DOCUMENT_TREE)
         params.addHeader("token", token)
@@ -102,7 +106,7 @@ class DocumentTreeActivity : BaseNormalActivity() {
             }
 
             override fun onFinished() {
-
+                if (loadingDialog.isShowing) loadingDialog.dismiss()
             }
         })
 

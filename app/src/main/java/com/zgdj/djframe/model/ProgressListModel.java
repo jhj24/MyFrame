@@ -54,7 +54,7 @@ public class ProgressListModel implements Serializable {
         this.data = data;
     }
 
-    public static class DataBean implements Serializable{
+    public static class DataBean implements Serializable {
         /**
          * section_name : 引水系统土建及金属结构安装工程
          * actual_date : 2018-07-04
@@ -69,7 +69,7 @@ public class ProgressListModel implements Serializable {
         private String user_name;
         private String remark;
         private int id;
-        private String path;
+        private List<FileBean> path;
 
         public String getSection_name() {
             return section_name;
@@ -111,12 +111,43 @@ public class ProgressListModel implements Serializable {
             this.id = id;
         }
 
-        public String getPath() {
+        public List<FileBean> getPath() {
             return path;
         }
 
-        public void setPath(String path) {
+        public void setPath(List<FileBean> path) {
             this.path = path;
         }
     }
+
+    public static class FileBean implements Serializable {
+        private int id;
+        private String name;
+        private String filepath;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getFilepath() {
+            return filepath;
+        }
+
+        public void setFilepath(String filepath) {
+            this.filepath = filepath;
+        }
+    }
+
 }

@@ -11,10 +11,10 @@ import com.zgdj.djframe.R;
 import com.zgdj.djframe.activity.work.DocumentTreeActivity;
 import com.zgdj.djframe.activity.work.ModelAllActivity;
 import com.zgdj.djframe.activity.work.ModelRealActivity;
-import com.zgdj.djframe.activity.work.ProgressRealTimeActivity;
 import com.zgdj.djframe.activity.work.QualityControlActivity;
 import com.zgdj.djframe.activity.work.QualityEvaluationActivity;
 import com.zgdj.djframe.activity.work.StandardTreeActivity;
+import com.zgdj.djframe.activity.work.progress.ProgressRealTimeTreeActivity;
 import com.zgdj.djframe.adapter.WorkAdapter;
 import com.zgdj.djframe.base.BaseFragment;
 import com.zgdj.djframe.bean.WorkBean;
@@ -141,7 +141,7 @@ public class WorkFragment extends BaseFragment {
             } else if (type == 3) { //进度管理
                 switch (position) {
                     case 0: //实时进度
-                        jumpToInterface(ProgressRealTimeActivity.class);
+                        jumpToInterface(ProgressRealTimeTreeActivity.class);
                         break;
 
                 }

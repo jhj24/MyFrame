@@ -78,15 +78,19 @@
         android:textColor="@color/big_black"
         android:textSize="16sp" />
 
-    <LinearLayout
-        android:id="@+id/line_chart_layout_type"
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:orientation="horizontal">
+        android:gravity="end">
 
+        <LinearLayout
+            android:id="@+id/line_chart_layout_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
 
 
     <com.zgdj.djframe.view.chart.LineChart01View

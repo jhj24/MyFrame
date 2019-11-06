@@ -19,8 +19,8 @@
         android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingBottom="20dp"
-        android:paddingTop="20dp">
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
 
         <TextView
             android:id="@+id/progress_text_bids_select"
@@ -29,16 +29,17 @@
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:background="@drawable/shape_rectangle_spinner"
-            android:drawablePadding="6dp"
             android:drawableRight="@drawable/yxx_triangle_down"
+            android:drawablePadding="6dp"
             android:ellipsize="end"
             android:gravity="center"
+            android:hint="日期"
             android:maxEms="10"
             android:maxLines="1"
-            android:paddingBottom="6dp"
             android:paddingLeft="14dp"
-            android:paddingRight="14dp"
             android:paddingTop="6dp"
+            android:paddingRight="14dp"
+            android:paddingBottom="6dp"
             android:textColor="@color/new_black"
             android:textSize="16sp" />
 
@@ -49,12 +50,12 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/ripple_button_bg"
-            android:minHeight="0dp"
             android:minWidth="0dp"
-            android:paddingBottom="5dp"
+            android:minHeight="0dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"
             android:paddingTop="5dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="5dp"
             android:text="查询"
             android:textColor="@color/white"
             android:textSize="16sp" />

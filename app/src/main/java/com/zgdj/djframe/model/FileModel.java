@@ -1,5 +1,7 @@
 package com.zgdj.djframe.model;
 
+import org.xutils.http.annotation.HttpResponse;
+
 public class FileModel {
 
 
@@ -41,9 +43,17 @@ public class FileModel {
          * filename : 4.jpg
          * path : /uploads/atlas/atlas_thumb/file/20190729/d0096ec6c83575373e3a21d129ff8fef.jpg
          */
-
+        private int id;
         private String filename;
         private String path;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
 
         public String getFilename() {
             return filename;

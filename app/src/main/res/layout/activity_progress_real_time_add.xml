@@ -9,13 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:paddingTop="10dp"
         tools:context=".activity.work.ProgressRealTimeAddActivity">
 
         <!-- 所属标段 -->
         <LinearLayout
+            android:id="@+id/layout_progress"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
             android:background="@color/white"
             android:gravity="center_vertical"
             android:orientation="horizontal">
@@ -154,18 +155,28 @@
                 android:textColor="@color/middle_black"
                 android:textSize="16sp" />
 
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp" />
+
             <RelativeLayout
+                android:id="@+id/layout_image"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/progress_btn_add_img"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginRight="10dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/icon_add" />
 
@@ -173,10 +184,10 @@
                     android:id="@+id/progress_btn_del"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignRight="@+id/progress_btn_add_img"
                     android:layout_alignTop="@+id/progress_btn_add_img"
-                    android:layout_marginRight="-10dp"
+                    android:layout_alignRight="@+id/progress_btn_add_img"
                     android:layout_marginTop="-10dp"
+                    android:layout_marginRight="-10dp"
                     android:padding="4dp"
                     android:src="@drawable/icon_delete"
                     android:visibility="gone" />
@@ -191,10 +202,10 @@
             android:layout_margin="40dp"
             android:background="@drawable/shape_rectangle_blue_round"
             android:minHeight="0dp"
-            android:paddingBottom="10dp"
             android:paddingLeft="40dp"
-            android:paddingRight="40dp"
             android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="10dp"
             android:text="提交"
             android:textColor="@color/white"
             android:textSize="16sp" />

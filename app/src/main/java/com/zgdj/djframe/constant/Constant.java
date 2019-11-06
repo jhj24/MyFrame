@@ -33,7 +33,7 @@ public class Constant {
 //    public static final String BASE_URL = "http://192.168.1.59:82";//- 余晶
 //     public static final String BASE_URL = "http://192.168.1.2:81";// - 测试服务器
     //   public static final String BASE_URL = "http://zzbhidi.f3322.net:10081";// -    正式服务器
-   public static final String BASE_URL = "http://183.196.236.186:1031";// -    现场服务器
+    public static final String BASE_URL = "http://183.196.236.186:1031";// -    现场服务器
 
     public static final String COOKIE_KEY = "Cookie";   //cookie key
 
@@ -124,9 +124,16 @@ public class Constant {
 
     public static final String URL_WORK_REAL_TIME_PROGRESS_INFO = BASE_URL + "/api/actual/actualList";//实时进度 - 列表信息
 
+    // ====实时进度修改后====
+    public static final String URL_WORK_REAL_TIME_PROGRESS_TREE = BASE_URL + "/api/Actual/divisionTree";//实时进度 -列表树
+    public static final String URL_WORK_REAL_TIME_PROGRESS_LIST = BASE_URL + "/api/Actual/actualList";//实时进度 - 列表信息
+    public static final String URL_WORK_REAL_TIME_PROGRESS_ADD_MULTI_IMAGE = BASE_URL + "/api/Actual/add";//实时进度 - 列表信息
+
+
     public static final String URL_WORK_REAL_TIME_PROGRESS_DELETE = BASE_URL + "/api/actual/del";//实时进度 - 删除当前item
 
     public static final String URL_WORK_REAL_TIME_PROGRESS_ADD = BASE_URL + "/api/actual/add";//实时进度 - 新增进度
+
 
     public static final String URL_WORK_STANDARD_TREE = BASE_URL + "/api/Appnorm/normTree";
     public static final String URL_WORK_STANDARD_LIST = BASE_URL + "/api/Appnorm/fileList";

@@ -281,6 +281,9 @@
         <activity android:name=".activity.message.MessageApproval2Activity" />
         <activity android:name=".activity.message.ChoiceOfExecutorActivity" />
         <activity android:name=".activity.message.MessageRefuseApprovalActivity" />
+        <activity android:name=".activity.work.progress.ProgressRealTimeTreeActivity" />
+        <activity android:name=".activity.work.progress.ProgressRealTimeActivity" />
+        <activity android:name=".activity.work.progress.ProgressRealTimeAddActivity" />
         <activity android:name=".activity.work.ProgressRealTimeActivity" />
         <activity
             android:name=".activity.work.ProgressRealTimeAddActivity"
